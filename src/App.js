@@ -1,23 +1,14 @@
 // import logo from './logo.svg';
-import Alert from 'react-bootstrap/Alert';
-
+import './styles/App.css';
+import NavBar from './components/NavBar';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
-    [
-      'primary',
-      'secondary',
-      'success',
-      'danger',
-      'warning',
-      'info',
-      'light',
-      'dark',
-    ].map((variant, idx) => (
-      <Alert className="m-5" key={idx} variant={variant}>
-        This is a {variant} alert—check it out!
-      </Alert>
-    ))
+    <div className="App">
+      <NavBar />
+      <Sidebar />
+    </div>
   );
 }
 
