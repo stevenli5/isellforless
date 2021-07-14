@@ -3,18 +3,18 @@ import logo from '../assets/logo.png';
 
 export default function NavBar() {
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar className="sticky-top" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand className="d-flex" href="#home">
           <img
             alt=""
             src={logo}
             className="d-inline-block align-top"
-            style={{ height: '3rem' }, { width: '3rem' }}
+            style={{ height: '100%', width: '5%' }}
           />{' '}
-          <div className="fs-1 fw-bold ms-3" style={{ color: '#B3B3B3' }}>iSellForLess</div>
+          <div className="fs-1 fw-bold ms-3" style={{ color: '#B3B3B3' }}><h1>iSellForLess</h1></div>
         </Navbar.Brand>
-        <Form className="d-flex w-50">
+        <Form className="d-flex w-75">
           <FormControl
             type="search"
             placeholder="Search"
