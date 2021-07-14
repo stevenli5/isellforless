@@ -5,15 +5,15 @@ export default function NavBar() {
   return (
     <Navbar className="sticky-top" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand className="d-flex" href="#home">
+        <div className="d-flex">
           <img
-            alt=""
+            alt="iSellForLess logo"
             src={logo}
             className="d-inline-block align-top"
             style={{ height: '100%', width: '5%' }}
           />{' '}
           <div className="fs-1 fw-bold ms-3" style={{ color: '#B3B3B3' }}><h1>iSellForLess</h1></div>
-        </Navbar.Brand>
+        </div>
         <Form className="d-flex w-75">
           <FormControl
             type="search"
