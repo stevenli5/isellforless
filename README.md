@@ -27,6 +27,6 @@
 ### Miscellaneous
 - Import FontAwesome icons https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react
 - Adding solid and regular icons https://stackoverflow.com/questions/51473373/how-to-use-same-icon-regular-and-solid-type
-- Removing horizontal scroll https://stackoverflow.com/questions/60923203/remove-unwanted-horizontal-scroll-where-is-the-horizontal-scroll-coming-from
+<!-- - Removing horizontal scroll https://stackoverflow.com/questions/60923203/remove-unwanted-horizontal-scroll-where-is-the-horizontal-scroll-coming-from -->
 
 ## Disclaimer

@@ -1,9 +1,9 @@
-// import logo from './logo.svg';
 import './styles/App.css';
 import NavBar from './components/NavBar';
 import Sidebar from './components/Sidebar';
 import Products from './components/Products';
-import ProductCard from './components/ProductCard';
+import React from 'react';
+// import ProductCard from './components/ProductCard';
 
 function App() {
   return (
