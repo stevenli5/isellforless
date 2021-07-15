@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/isellforless/static/css/main.902617e9.chunk.css",
-    "main.js": "/isellforless/static/js/main.9b0136e8.chunk.js",
-    "main.js.map": "/isellforless/static/js/main.9b0136e8.chunk.js.map",
+    "main.css": "/isellforless/static/css/main.ebf8ca39.chunk.css",
+    "main.js": "/isellforless/static/js/main.c069a3a2.chunk.js",
+    "main.js.map": "/isellforless/static/js/main.c069a3a2.chunk.js.map",
     "runtime-main.js": "/isellforless/static/js/runtime-main.f01dde43.js",
     "runtime-main.js.map": "/isellforless/static/js/runtime-main.f01dde43.js.map",
     "static/css/2.4be38407.chunk.css": "/isellforless/static/css/2.4be38407.chunk.css",
-    "static/js/2.8ca8b087.chunk.js": "/isellforless/static/js/2.8ca8b087.chunk.js",
-    "static/js/2.8ca8b087.chunk.js.map": "/isellforless/static/js/2.8ca8b087.chunk.js.map",
+    "static/js/2.dd922138.chunk.js": "/isellforless/static/js/2.dd922138.chunk.js",
+    "static/js/2.dd922138.chunk.js.map": "/isellforless/static/js/2.dd922138.chunk.js.map",
     "index.html": "/isellforless/index.html",
     "static/css/2.4be38407.chunk.css.map": "/isellforless/static/css/2.4be38407.chunk.css.map",
-    "static/css/main.902617e9.chunk.css.map": "/isellforless/static/css/main.902617e9.chunk.css.map",
-    "static/js/2.8ca8b087.chunk.js.LICENSE.txt": "/isellforless/static/js/2.8ca8b087.chunk.js.LICENSE.txt"
+    "static/css/main.ebf8ca39.chunk.css.map": "/isellforless/static/css/main.ebf8ca39.chunk.css.map",
+    "static/js/2.dd922138.chunk.js.LICENSE.txt": "/isellforless/static/js/2.dd922138.chunk.js.LICENSE.txt",
+    "static/media/logo.f4320aad.png": "/isellforless/static/media/logo.f4320aad.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f01dde43.js",
     "static/css/2.4be38407.chunk.css",
-    "static/js/2.8ca8b087.chunk.js",
-    "static/css/main.902617e9.chunk.css",
-    "static/js/main.9b0136e8.chunk.js"
+    "static/js/2.dd922138.chunk.js",
+    "static/css/main.ebf8ca39.chunk.css",
+    "static/js/main.c069a3a2.chunk.js"
   ]
 }
