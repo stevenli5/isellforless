@@ -50,7 +50,7 @@ export default function Sidebar() {
                                 name="priceSort"
                             />
                         </div>
-                    <h3 className="fs-5">Average Customer Review</h3>
+                    <h3 className="fs-5">Average Reviews</h3>
                             <Form.Check
                                 type="radio"
                                 id="4stars"
