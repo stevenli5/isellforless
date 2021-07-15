@@ -1,4 +1,5 @@
 import { Card, ListGroup, ListGroupItem, Modal, Button } from "react-bootstrap";
+import iphone6s from '../assets/products/iphone6s.png';
 import iphone11promax from '../assets/products/iphone11promax.jpg';
 import React from 'react';
 
@@ -37,7 +38,7 @@ export default function ProductCard() {
     return (
       <>
         <Card style={{ width: '18rem', cursor: 'pointer' }} onClick={() => setModalShow(true)}>
-        <Card.Img variant="top" src={iphone11promax} />
+        <Card.Img variant="top" src={iphone6s} style={{height: '16rem', width: '100%'}}/>
         <Card.Body>
           <Card.Title>Card Title</Card.Title>
           <ListGroup className="list-group-flush">

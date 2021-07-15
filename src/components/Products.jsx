@@ -1,38 +1,23 @@
-import ProductCard from './ProductCard';
-import React from 'react';
+import iphone11promax from '../assets/products/iphone11promax.jpg';
 
 export default function Products() {
 
+    const products = [
+        {
+            category: "iPhones",
+            name: "iPhone 11 Pro Max",
+            price: 100.00,
+            image: {iphone11promax}
+        },
+        {
+            category: "iPhones",
+            name: "iPhone 11 Pro Max",
+            price: 100.00,
+            image: {iphone11promax}
+        },
+    ]
+
     return (
-        <div className="col-10 p-5 bg-light" style={{ height: '100vh' }}>
-            <div className="row ps-5">
-                <div className="col-3">
-                    <ProductCard />
-                </div>
-                <div className="col-3">
-                    <ProductCard />
-                </div>
-                <div className="col-3">
-                    <ProductCard />
-                </div>
-                <div className="col-3">
-                    <ProductCard />
-                </div>
-            </div>
-            <div className="row my-5 pb-5 ps-5">
-                <div className="col-3">
-                    <ProductCard />
-                </div>
-                <div className="col-3">
-                    <ProductCard />
-                </div>
-                <div className="col-3">
-                    <ProductCard />
-                </div>
-                <div className="col-3">
-                    <ProductCard />
-                </div>
-            </div>
-        </div>
+        <h4>Centered Modal</h4>
     );
 }

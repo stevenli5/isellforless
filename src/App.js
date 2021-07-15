@@ -1,7 +1,7 @@
 import './styles/App.css';
 import NavBar from './components/NavBar';
 import Sidebar from './components/Sidebar';
-import Products from './components/Products';
+import Main from './components/Main';
 import React from 'react';
 // import ProductCard from './components/ProductCard';
 
@@ -11,7 +11,7 @@ function App() {
       <NavBar />
       <div className="row">
         <Sidebar />
-        <Products />
+        <Main />
       </div>
     </div>
   );
