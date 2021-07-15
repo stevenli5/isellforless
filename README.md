@@ -9,13 +9,13 @@
 - JavaScript
 - React
 - React Bootstrap
-- Node.js
 
 ## Sources
 ### HTML
 
 ### CSS/Bootstrap
 - Navbar and search bar https://react-bootstrap.github.io/components/navbar/
+- Radio buttons https://react-bootstrap.netlify.app/components/forms/#forms-check-stacked
 
 ### JavaScript
 
@@ -23,5 +23,7 @@
 - Apple logo https://commons.wikimedia.org/wiki/File:Apple_logo_grey.svg
 
 ### Miscellaneous
+- Import FontAwesome icons https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react
+- Adding solid and regular icons https://stackoverflow.com/questions/51473373/how-to-use-same-icon-regular-and-solid-type
 
 ## Disclaimer
