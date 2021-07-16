@@ -5,27 +5,27 @@ import { faStar as unfilled } from '@fortawesome/free-regular-svg-icons'
 
 export default function Sidebar() {
     return (
-        <div className="col-2" style={{ height: '100vh', backgroundColor: '#F8F9FA' }}>
+        <div className="col-2 sticky-top text-white" style={{ height: '100vh', backgroundColor: '#212529', paddingTop: '5rem'}}>
             <div className="pt-4 px-4 mb-5">
                 <h2 class="fs-3">Categories</h2>
                 <div className="py-2">
                     <div className="d-grid gap-2">
-                        <Button className="p-0" variant="secondary">
+                        <Button className="p-0 fs-5" variant="light">
                             iPhones
                         </Button>
-                        <Button className="p-0" variant="secondary">
+                        <Button className="p-0 fs-5" variant="light">
                             iPads
                         </Button>
-                        <Button className="p-0" variant="secondary">
-                            Laptops
+                        <Button className="p-0 fs-5" variant="light">
+                            MacBooks
                         </Button>
-                        <Button className="p-0" variant="secondary">
+                        <Button className="p-0 fs-5" variant="light">
                             Cases
                         </Button>
-                        <Button className="p-0" variant="secondary">
+                        <Button className="p-0 fs-5" variant="light">
                             Chargers
                         </Button>
-                        <Button className="p-0" variant="secondary">
+                        <Button className="p-0 fs-5" variant="light">
                             Accessories
                         </Button>
                     </div>

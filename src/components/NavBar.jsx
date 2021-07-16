@@ -23,7 +23,7 @@ function CartAndCheckout(props) {
       <Modal.Header closeButton>
       </Modal.Header>
       <Modal.Body>
-          {stage===0 ? <Cart /> : stage===1 ? <Information /> : stage===2 ? <Payment /> : <Shipping />}
+          {stage===0 ? <Cart cart={props.cart}/> : stage===1 ? <Information /> : stage===2 ? <Payment /> : <Shipping />}
       </Modal.Body>
       <Modal.Footer>
         {stage!==0 ? <Button onClick={() => setStage(stage - 1)}>Back</Button> : <></>}
@@ -35,12 +35,12 @@ function CartAndCheckout(props) {
 }
 
 
-export default function NavBar() {
+export default function NavBar(props) {
 
   const [modalShow1, setModalShow1] = React.useState(false);
 
   return (
-    <Navbar className="sticky-top" bg="dark" variant="dark">
+    <Navbar fixed="top" bg="dark" variant="dark">
       <Container>
         <div className="d-flex">
           <img
@@ -60,12 +60,13 @@ export default function NavBar() {
           />
           <Button variant="outline-light">Search</Button>
         </Form>
-        <Button variant="secondary"><FontAwesomeIcon icon={cartIcon} style={{ cursor: 'pointer' }} onClick={() => setModalShow1(true)} className="fs-2"/>
+        <Button variant="dark"><FontAwesomeIcon icon={cartIcon} style={{ cursor: 'pointer' }} onClick={() => setModalShow1(true)} className="fs-2"/>
         </Button>
       </Container>
       <CartAndCheckout
         show={modalShow1}
         onHide={() => setModalShow1(false)}
+        cart={props.cart}
       />
     </Navbar>
     

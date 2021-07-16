@@ -2,6 +2,11 @@ import { Card, ListGroup, ListGroupItem, Modal, Button } from "react-bootstrap";
 import React from 'react';
 
 function MyVerticallyCenteredModal(props) {
+  function handleClick(){
+    let {show, onHide, handleAdd, ...item} = props;
+    props.handleAdd(item);
+  }
+
   return (
     <Modal
       {...props}
@@ -34,7 +39,7 @@ function MyVerticallyCenteredModal(props) {
         </div>
       </Modal.Body>
       <Modal.Footer className="bg-light">
-        <Button >Add to Cart</Button>
+        <Button onClick={handleClick}>Add to Cart</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -43,10 +48,9 @@ function MyVerticallyCenteredModal(props) {
 export default function ProductCard(props) {
   
   const [modalShow, setModalShow] = React.useState(false);
-  console.log(props.image);
     return (
       <>
-        <Card style={{ width: '18rem', cursor: 'pointer', borderColor: '#000000' }} onClick={() => setModalShow(true)}>
+        <Card className="ms-3 mb-3" style={{ width: '18rem', cursor: 'pointer', borderColor: '#000000' }} onClick={() => setModalShow(true)}>
         <Card.Img variant="top" src={props.image} style={{height: '18rem', width: '100%'}}/>
         
         <Card.Body>
