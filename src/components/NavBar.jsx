@@ -23,11 +23,11 @@ function CartAndCheckout(props) {
       <Modal.Header closeButton>
       </Modal.Header>
       <Modal.Body>
-          {stage==0 ? <Cart /> : stage==1 ? <Information /> : stage==2 ? <Payment /> : <Shipping />}
+          {stage===0 ? <Cart /> : stage===1 ? <Information /> : stage===2 ? <Payment /> : <Shipping />}
       </Modal.Body>
       <Modal.Footer>
-        {stage!=0 ? <Button onClick={() => setStage(stage - 1)}>Back</Button> : <></>}
-        {stage!=3 ? <Button onClick={() => setStage(stage + 1)}>Next</Button> : <></>}
+        {stage!==0 ? <Button onClick={() => setStage(stage - 1)}>Back</Button> : <></>}
+        {stage!==3 ? <Button onClick={() => setStage(stage + 1)}>Next</Button> : <></>}
       </Modal.Footer>
     </Modal>
   </>
