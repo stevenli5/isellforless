@@ -46,10 +46,6 @@ export default function ProductCard() {
           <ListGroupItem><b>Average Rating:</b></ListGroupItem>
           <ListGroupItem><b>Quality:</b></ListGroupItem>
         </ListGroup>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
-          </Card.Text>
         </Card.Body>
       </Card>
       <MyVerticallyCenteredModal

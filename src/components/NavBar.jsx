@@ -2,10 +2,18 @@ import { Container, Navbar, Form, FormControl, Button, Modal } from "react-boots
 import logo from '../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart as cartIcon } from '@fortawesome/free-solid-svg-icons';
-import React from 'react';
+import React, {useState} from 'react';
+import Information from './Information';
+import Payment from './Payment';
+import Shipping from './Shipping';
+import Cart from './Cart';
 
-function MyVerticallyCenteredModal(props) {
+function CartAndCheckout(props) {
+  const [stage, setStage] = useState(0);//stage represents the current "stage" in the checkout process
+
   return (
+
+    <>
     <Modal
       {...props}
       size="lg"
@@ -13,28 +21,23 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Cart
-        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+          {stage==0 ? <Cart /> : stage==1 ? <Information /> : stage==2 ? <Payment /> : <Shipping />}
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        {stage!=0 ? <Button onClick={() => setStage(stage - 1)}>Back</Button> : <></>}
+        {stage!=3 ? <Button onClick={() => setStage(stage + 1)}>Next</Button> : <></>}
       </Modal.Footer>
     </Modal>
+  </>
   );
 }
 
+
 export default function NavBar() {
 
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow1, setModalShow1] = React.useState(false);
 
   return (
     <Navbar className="sticky-top" bg="dark" variant="dark">
@@ -57,12 +60,12 @@ export default function NavBar() {
           />
           <Button variant="outline-light">Search</Button>
         </Form>
-        <Button variant="secondary"><FontAwesomeIcon icon={cartIcon} style={{ cursor: 'pointer' }} onClick={() => setModalShow(true)} className="fs-2"/>
+        <Button variant="secondary"><FontAwesomeIcon icon={cartIcon} style={{ cursor: 'pointer' }} onClick={() => setModalShow1(true)} className="fs-2"/>
         </Button>
       </Container>
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
+      <CartAndCheckout
+        show={modalShow1}
+        onHide={() => setModalShow1(false)}
       />
     </Navbar>
     
