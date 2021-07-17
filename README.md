@@ -18,6 +18,7 @@
 - Radio buttons https://react-bootstrap.netlify.app/components/forms/#forms-check-stacked
 - Cards https://react-bootstrap.netlify.app/components/cards/
 - Modals https://react-bootstrap.netlify.app/components/modal/
+- Tooltips https://react-bootstrap.github.io/components/overlays/
 
 ### JavaScript
 - Props https://reactjs.org/docs/components-and-props.html

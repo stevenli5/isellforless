@@ -45,12 +45,14 @@ export default function Sidebar(props) {
                                     id="lowestToHighest"
                                     label="Lowest to Highest"
                                     name="priceSort"
+                                    onClick={()=>{props.sortByPrice("L2H")}}
                                 />
                                 <Form.Check
                                     type="radio"
                                     id="highestToLowest"
                                     label="Highest to Lowest"
                                     name="priceSort"
+                                    onClick={()=>{props.sortByPrice("H2L")}}
                                 />
                             </div>
                         </div>

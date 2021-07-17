@@ -152,8 +152,13 @@ function App() {
     cart.pop(i);
   }
 
-  function sortByPrice(e){
-    console.log(e.target.value);
+  function sortByPrice(type){
+    if(type==="L2H"){
+
+    } else if (type==="H2L") {
+
+    }
+
   }
 
   return (
