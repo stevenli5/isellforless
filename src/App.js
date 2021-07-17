@@ -152,11 +152,15 @@ function App() {
     cart.pop(i);
   }
 
+  function sortByPrice(e){
+    console.log(e.target.value);
+  }
+
   return (
     <div className="App">
       <NavBar cart={cart} handleRemove={handleRemove}/>
       <div className="row">
-        <Sidebar />
+        <Sidebar sortByPrice={sortByPrice}/>
         <div className="col-10 px-4 mt-5 bg-light d-flex flex-wrap" style={{paddingTop: '4rem'}}>
           {products.map((item) => (<ProductCard {...item} handleAdd={handleAdd} />))}
         </div>

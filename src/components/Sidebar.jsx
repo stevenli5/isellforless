@@ -1,10 +1,11 @@
 import { Button, Form } from "react-bootstrap";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar as filled } from '@fortawesome/free-solid-svg-icons'
-import { faBars as hamburger } from '@fortawesome/free-solid-svg-icons'
-import { faStar as unfilled } from '@fortawesome/free-regular-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar as filled } from '@fortawesome/free-solid-svg-icons';
+import { faBars as hamburger } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsAltV as arrows } from '@fortawesome/free-solid-svg-icons';
+import { faStar as unfilled } from '@fortawesome/free-regular-svg-icons';
 
-export default function Sidebar() {
+export default function Sidebar(props) {
     return (
         <div className="col-2 sticky-top text-white" style={{ height: '100vh', backgroundColor: '#212529', paddingTop: '5rem'}}>
             <div className="pt-4 px-4 mb-5">
@@ -33,7 +34,7 @@ export default function Sidebar() {
                 </div>
             </div>
             <div className="px-4">
-                <h2 class="fs-3 mb-3">Sort</h2>
+                <h2 class="fs-3 mb-3"><FontAwesomeIcon icon={arrows} /> Sort</h2>
                 <div className="ps-4 pb-2">
                     <Form>
                         <div className="mb-3">

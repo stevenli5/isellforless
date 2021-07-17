@@ -1,5 +1,8 @@
 import React from 'react';
 import { OverlayTrigger, Button, Tooltip} from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faIdCard as card } from '@fortawesome/free-solid-svg-icons';
+
 export default function Information() {
 
     const renderTooltip = (props) => (
@@ -10,7 +13,7 @@ export default function Information() {
 
     return (
         <>
-            <h1 className="text-center mb-4">Your Information</h1>
+            <h1 className="text-center mb-4"><FontAwesomeIcon icon={card} /> Your Information</h1>
             <div className="row my-1">
                 <div className="col-2">
                     <label className="fw-bold ps-4">First&nbsp;Name</label>

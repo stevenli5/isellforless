@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingBasket as basket } from '@fortawesome/free-solid-svg-icons';
 
 export default function Cart(props) {
     const [total, setTotal] = useState(0);
@@ -21,7 +23,7 @@ export default function Cart(props) {
 
     return (
         <>
-            <h1 className="text-center mb-4">Cart</h1>
+            <h1 className="text-center mb-4"><FontAwesomeIcon icon={basket} /> Cart</h1>
             <div className="row mb-3 fs-5">
                 <div className="col-7 fw-bold"><u>Product(s)</u></div>
                 <div className="col-4 align-bottom text-end fw-bold"><u>Price</u></div>

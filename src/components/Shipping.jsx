@@ -1,8 +1,11 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShippingFast as truck } from '@fortawesome/free-solid-svg-icons';
+
 export default function Shipping() {
 
     return (
         <>
-        <h1 className="text-center mb-4">Shipping Information</h1>
+        <h1 className="text-center mb-4"><FontAwesomeIcon icon={truck} /> Shipping Information</h1>
         <div className="row my-1">
             <div className="col-2">
             <label className="fw-bold ms-1 ps-5">Address</label>

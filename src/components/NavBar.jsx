@@ -55,7 +55,7 @@ export default function NavBar(props) {
           <FormControl
             type="search"
             placeholder="Search"
-            className="mr-2"
+            className="me-2"
             aria-label="Search"
           />
           <Button variant="outline-light">Search</Button>
