@@ -3,6 +3,27 @@ import { faCreditCard as ccard } from '@fortawesome/free-solid-svg-icons';
 
 export default function Payment() {
 
+    // const nameTooltip = (props) => (
+    //     <Tooltip id="button-tooltip" {...props}>
+    //         Enter your first name.
+    //     </Tooltip>
+    // );
+    // const numberTooltip = (props) => (
+    //     <Tooltip id="button-tooltip" {...props}>
+    //         Enter your last name.
+    //     </Tooltip>
+    // );
+    // const expiryTooltip = (props) => (
+    //     <Tooltip id="button-tooltip" {...props}>
+    //         Enter your email address. Example: john.appleseed@icloud.com
+    //     </Tooltip>
+    // );
+    // const cvvTooltip = (props) => (
+    //     <Tooltip id="button-tooltip" {...props}>
+    //         Enter your phone number. Example: 6133439866
+    //     </Tooltip>
+    // );
+
     return (
         <>
         <h1 className="text-center mb-4"><FontAwesomeIcon icon={ccard} /> Payment Information</h1>

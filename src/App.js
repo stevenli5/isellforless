@@ -13,7 +13,7 @@ const allProducts = [{
   name: "iPhone 5s",
   image: iphone5sBlack,
   price: "1000.30",
-  rating: 5,
+  rating: 4.9,
   quality: "Used - Acceptable",
   colour: "Black",
   description: "This iPhone 11 Pro Max, ",
@@ -26,7 +26,7 @@ const allProducts = [{
   name: "iPad Pro 11 inch",
   image: iphone6s,
   price: "432400.00",
-  rating: 3,
+  rating: 3.8,
   quality: "Used - Good",
   description: "",
   reviews: ["", ""]
@@ -163,16 +163,16 @@ function App() {
   }
 
   function sortByRating(type){
-    let sortedProducts = [...products];
+    let sortedProducts = [...allProducts];
     if(type === "1"){
       sortedProducts = sortedProducts.filter((prod)=>prod.rating>=1);
     } else if (type === "2") {
       sortedProducts = sortedProducts.filter((prod)=>prod.rating>=2);
     } else if (type === "3") {
       sortedProducts = sortedProducts.filter((prod)=>prod.rating>=3);
-    }else if (type === "4") {
+    } else if (type === "4") {
       sortedProducts = sortedProducts.filter((prod)=>prod.rating>=4);
-    }
+    } 
     setProducts(sortedProducts);
   }
 

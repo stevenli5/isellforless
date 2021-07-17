@@ -1,8 +1,7 @@
 import { Button, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as filled } from '@fortawesome/free-solid-svg-icons';
-import { faBars as hamburger } from '@fortawesome/free-solid-svg-icons';
-import { faArrowsAltV as arrows } from '@fortawesome/free-solid-svg-icons';
+import { faBars as hamburger, faArrowsAltV as arrows, faTags as price, faStarHalfAlt as rating, faAward as quality } from '@fortawesome/free-solid-svg-icons';
 import { faStar as unfilled } from '@fortawesome/free-regular-svg-icons';
 
 export default function Sidebar(props) {
@@ -38,7 +37,7 @@ export default function Sidebar(props) {
                 <div className="ps-4 pb-2">
                     <Form>
                         <div className="mb-3">
-                            <h3 className="fs-5">Price</h3>
+                            <h3 className="fs-5"><FontAwesomeIcon icon={price} /> Price</h3>
                             <div key="default-radio">
                                 <Form.Check
                                     type="radio"
@@ -57,14 +56,7 @@ export default function Sidebar(props) {
                             </div>
                         </div>
                         <div className="mb-3">
-                            <h3 className="fs-5">Average Rating</h3>
-                            <Form.Check
-                                type="radio"
-                                id="5stars"
-                                label={<><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /></>}
-                                name="reviewSort"
-                                onClick={()=>{props.sortByRating("5")}}
-                            />
+                            <h3 className="fs-5"><FontAwesomeIcon icon={rating} /> Average Rating</h3>
                             <Form.Check
                                 type="radio"
                                 id="4stars"
@@ -95,7 +87,13 @@ export default function Sidebar(props) {
                             />
                         </div>
                         <div className="mb-3">
-                            <h3 className="fs-5">Quality</h3>
+                            <h3 className="fs-5"><FontAwesomeIcon icon={quality} /> Quality</h3>
+                            <Form.Check
+                                type="radio"
+                                id="any"
+                                label="Any"
+                                name="qualitySort"
+                            />
                             <Form.Check
                                 type="radio"
                                 id="likeNew"
