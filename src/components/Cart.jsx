@@ -28,6 +28,7 @@ export default function Cart(props) {
                 <div className="col-7 fw-bold"><u>Product(s)</u></div>
                 <div className="col-4 align-bottom text-end fw-bold"><u>Price</u></div>
             </div>
+            <Button variant="danger" className="my-auto p-2 text-middle" onClick={() => { props.handleClear([]) }}>Clear Cart</Button>
             <div>
                 {props.cart.map(item =>
                 (

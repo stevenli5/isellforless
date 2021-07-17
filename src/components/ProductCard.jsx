@@ -1,7 +1,7 @@
 import { Card, ListGroup, ListGroupItem, Modal, Button } from "react-bootstrap";
 import React from 'react';
 
-function MyVerticallyCenteredModal(props) {
+function ProductInfo(props) {
   function handleClick() {
     let { show, onHide, handleAdd, ...item } = props;
     props.handleAdd(item);
@@ -63,7 +63,7 @@ export default function ProductCard(props) {
           </ListGroup>
         </Card.Body>
       </Card>
-      <MyVerticallyCenteredModal
+      <ProductInfo
         show={modalShow}
         onHide={() => setModalShow(false)}
         {...props}

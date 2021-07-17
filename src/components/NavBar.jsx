@@ -7,6 +7,7 @@ import Information from './Information';
 import Payment from './Payment';
 import Shipping from './Shipping';
 import Cart from './Cart';
+import Final from './Final';
 
 function CartAndCheckout(props) {
   const [stage, setStage] = useState(0); //stage represents the current "stage" in the checkout process
@@ -23,11 +24,11 @@ function CartAndCheckout(props) {
         <Modal.Header closeButton>
         </Modal.Header>
         <Modal.Body>
-          {stage === 0 ? <Cart cart={props.cart} handleRemove={props.handleRemove}/> : stage === 1 ? <Information /> : stage === 2 ? <Payment /> : <Shipping />}
+          {stage === 0 ? <Cart cart={props.cart} handleRemove={props.handleRemove} handleClear={props.handleClear}/> : stage === 1 ? <Information /> : stage === 2 ? <Payment /> : stage === 3 ? <Shipping /> : <Final />}
 
           <hr />
           {stage !== 0 ? <Button variant="dark" className="float-start" onClick={() => setStage(stage - 1)}>Back</Button> : <></>}
-          {stage !== 3 ? <Button variant="dark" className="float-end" onClick={() => setStage(stage + 1)}>Next</Button> : <></>}
+          {stage !== 4 ? <Button variant="dark" className="float-end" onClick={() => setStage(stage + 1)}>Next</Button> : <></>}
         </Modal.Body>
       </Modal>
     </>
@@ -68,6 +69,7 @@ export default function NavBar(props) {
         onHide={() => setModalShow1(false)}
         cart={props.cart}
         handleRemove={props.handleRemove}
+        handleClear={props.handleClear}
       />
     </Navbar>
 
