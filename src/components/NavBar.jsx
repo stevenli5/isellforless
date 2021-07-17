@@ -40,6 +40,12 @@ export default function NavBar(props) {
 
   const [modalShow1, setModalShow1] = React.useState(false);
 
+  let searchInput = null;
+
+  function handleSearch(){
+    props.handleSearch(searchInput.value);
+  }
+
   return (
     <Navbar fixed="top" bg="dark" variant="dark">
       <Container>
@@ -58,8 +64,9 @@ export default function NavBar(props) {
             placeholder="Search"
             className="me-2"
             aria-label="Search"
+            ref={(input) => { searchInput = input; }}
           />
-          <Button variant="outline-light"><FontAwesomeIcon className="fs-4" icon={search} /></Button>
+          <Button variant="outline-light" onClick={handleSearch}><FontAwesomeIcon className="fs-4" icon={search} /></Button>
         </Form>
         <Button variant="secondary" className="rounded-circle p-2"><FontAwesomeIcon icon={cart} style={{ cursor: 'pointer' }} onClick={() => setModalShow1(true)} className="fs-2" />
         </Button>

@@ -7,134 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuestionCircle as question } from '@fortawesome/free-solid-svg-icons';
-import iphone5sBlack from './assets/products/iphone5s-black.jpg';
-import iphone6s from './assets/products/iphone6s-grey.png';
-import iphone11promax from './assets/products/iphone11promax.jpg';
-
-const allProducts = [{
-  id: "0",
-  category: "iPhone",
-  name: "iPhone 5s",
-  image: iphone5sBlack,
-  price: "1000.30",
-  rating: 4.9,
-  quality: "Used - Acceptable",
-  colour: "Black",
-  description: "This iPhone 11 Pro Max, ",
-  reviews: ['"Hella good"', "Safwan"],
-  reviewName: ["", ""]
-},
-{
-  id: "1",
-  category: "iPad",
-  name: "iPad Pro 11 inch",
-  image: iphone6s,
-  price: "432400.00",
-  rating: 3.8,
-  quality: "Used - Good",
-  description: "",
-  reviews: ["", ""]
-},
-{
-  id: "2",
-  category: "iPad",
-  name: "iPad Pro 1ss inch",
-  image: iphone6s,
-  price: "130.00",
-  rating: 1,
-  quality: "Used - Like New",
-  description: "",
-  reviews: ["", ""]
-},
-{
-  id: "3",
-  category: "iPad",
-  name: "iPad Pro 1ss inch",
-  image: iphone6s,
-  price: "1000.00",
-  rating: 1,
-  quality: "Used - Like New",
-  description: "",
-  reviews: ["", ""]
-},
-{
-  id: "4",
-  category: "iPad",
-  name: "iPad Pro 1ss inch",
-  image: iphone11promax,
-  price: "1000.00",
-  rating: 1,
-  quality: "Used - Like New",
-  description: "",
-  reviews: ["", ""]
-},
-{
-  id: "5",
-  category: "iPad",
-  name: "iPad Pro 1ss inch",
-  image: iphone6s,
-  price: "1000.00",
-  rating: 1,
-  quality: "Used - Like New",
-  description: "",
-  reviews: ["", ""]
-},
-{
-  id: "6",
-  category: "iPad",
-  name: "iPad Pro 1ss inch",
-  image: iphone6s,
-  price: "1000.00",
-  rating: 1,
-  quality: "Used - Like New",
-  description: "",
-  reviews: ["", ""]
-},
-{
-  id: "7",
-  category: "iPad",
-  name: "iPad Pro 1ss inch",
-  image: iphone6s,
-  price: "1000.00",
-  rating: 1,
-  quality: "Used - Like New",
-  description: "",
-  reviews: ["", ""]
-},
-{
-  id: "8",
-  category: "iPad",
-  name: "iPad Pro 1ss inch",
-  image: iphone6s,
-  price: "1000.00",
-  rating: 1,
-  quality: "Used - Like New",
-  description: "",
-  reviews: ["", ""]
-},
-{
-  id: "9",
-  category: "iPad",
-  name: "iPad Pro 1ss inch",
-  image: iphone6s,
-  price: "1000.00",
-  rating: 1,
-  quality: "Used - Like New",
-  description: "",
-  reviews: ["", ""]
-},
-{
-  id: "10",
-  category: "iPad",
-  name: "iPad Pro 1ss inch",
-  image: iphone6s,
-  price: "1000.00",
-  rating: 1,
-  quality: "Used - Like New",
-  description: "",
-  reviews: ["", ""]
-}
-]
+import allProducts from './Products';
 
 function App() {
   const [products, setProducts] = useState(allProducts);
@@ -144,6 +17,7 @@ function App() {
   const [categoryType, setCategoryType] = useState("");
   const [qualitySortType, setQualitySortType] = useState("");
   const [modalShow, setModalShow] = React.useState(false); // information modal
+  const [searchQuery, setSearchQuery] = useState("");
 
   function handleAdd(item) {
     cart.push(item);
@@ -161,6 +35,11 @@ function App() {
 
   useEffect(() => {
     let sortedProducts = [...allProducts];
+
+    //search
+    if(searchQuery !==""){
+      sortedProducts = sortedProducts.filter((prod) => prod.name.toLowerCase().includes(searchQuery.toLowerCase()));
+    }
 
     //sort price
     if (priceSortType === "L2H") {
@@ -205,17 +84,17 @@ function App() {
     }
 
     setProducts(sortedProducts);
-  }, [priceSortType, ratingSortType, categoryType, qualitySortType]);
+  }, [priceSortType, ratingSortType, categoryType, qualitySortType, searchQuery]);
 
 
   return (
     <div className="App">
-      <NavBar cart={cart} handleRemove={handleRemove} handleClear={setCart} />
+      <NavBar cart={cart} handleRemove={handleRemove} handleClear={setCart} handleSearch={setSearchQuery}/>
       <div className="row">
         <Sidebar sortByPrice={setPriceSortType} sortByRating={setRatingSortType} setCategory={setCategoryType} sortByQuality={setQualitySortType} />
         <div className="col-10 px-4 mt-5 bg-light d-flex flex-wrap" style={{ paddingTop: '4rem' }}>
           {products.map((item) => (<ProductCard {...item} handleAdd={handleAdd} />))}
-          <Button variant="dark" className="rounded-circle me-3 mb-3 p-2" style={{ position: 'fixed', right: '0', bottom: '0' }} onClick={() => setModalShow(true)}><FontAwesomeIcon className="fs-1" icon={question} /></Button>
+          <Button variant="secondary" className="shadow rounded-circle me-3 mb-3 p-2" style={{ position: 'fixed', right: '0', bottom: '0' }} onClick={() => setModalShow(true)}><FontAwesomeIcon className="fs-1" icon={question} /></Button>
           <Help
             show={modalShow}
             onHide={() => setModalShow(false)}

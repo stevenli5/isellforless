@@ -19,17 +19,17 @@ function ProductInfo(props) {
           {props.name}
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body className="bg-light">
+      <Modal.Body>
         <div className="row">
           <div className="col-6">
             <img src={props.image} style={{ height: '23rem', width: '100%' }}></img>
           </div>
           <div className="col-6">
-            <ListGroup className="list-group-flush mb-5">
-              <ListGroupItem className="bg-light"><b>Price:</b> ${props.price}</ListGroupItem>
-              <ListGroupItem className="bg-light"><b>Rating:</b> {props.rating}/5</ListGroupItem>
-              <ListGroupItem className="bg-light"><b>Quality:</b> {props.quality}</ListGroupItem>
-              <ListGroupItem className="bg-light"><b>Colour:</b> {props.colour}</ListGroupItem>
+            <ListGroup className="list-group mb-5 fs-5">
+              <ListGroupItem className="bg-light" style={{borderColor: '#000000'}}><b>Price:</b> ${props.price}</ListGroupItem>
+              <ListGroupItem className="bg-light" style={{borderColor: '#000000'}}><b>Rating:</b> {props.rating}/5</ListGroupItem>
+              <ListGroupItem className="bg-light" style={{borderColor: '#000000'}}><b>Quality:</b> {props.quality}</ListGroupItem>
+              <ListGroupItem className="bg-light" style={{borderColor: '#000000'}}><b>Colour:</b> {props.colour}</ListGroupItem>
             </ListGroup>
             {props.description}
           </div>
@@ -39,7 +39,7 @@ function ProductInfo(props) {
         </div>
       </Modal.Body>
       <Modal.Footer className="bg-light">
-        <Button onClick={handleClick}>Add to Cart</Button>
+        <Button variant="dark" onClick={handleClick}>Add to Cart</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -50,8 +50,8 @@ export default function ProductCard(props) {
   const [modalShow, setModalShow] = React.useState(false);
   return (
     <>
-      <Card className="shadow mx-5 mb-5" style={{ width: '18rem', cursor: 'pointer'}} onClick={() => setModalShow(true)}>
-        <Card.Img variant="top" src={props.image} style={{ height: '18rem', width: '100%' }} />
+      <Card className="shadow-lg mx-5 mb-5" style={{ width: '18rem', cursor: 'pointer'}} onClick={() => setModalShow(true)}>
+        <Card.Img variant="top" src={props.image} style={{ width: '100%' }} />
 
         <Card.Body>
           <Card.Title>{props.name}</Card.Title>

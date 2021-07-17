@@ -10,25 +10,25 @@ export default function Sidebar(props) {
                 <h2 class="fs-3"><FontAwesomeIcon icon={hamburger} /> Categories</h2>
                 <div className="py-2">
                     <div className="d-grid gap-2">
-                        <Button className="p-0 fs-5" variant="light" onClick={()=>{props.setCategory("All")}}>
+                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("All")}}>
                             All
                         </Button>
-                        <Button className="p-0 fs-5" variant="light" onClick={()=>{props.setCategory("iPhone")}}>
+                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("iPhone")}}>
                             iPhones
                         </Button>
-                        <Button className="p-0 fs-5" variant="light" onClick={()=>{props.setCategory("iPad")}}>
+                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("iPad")}}>
                             iPads
                         </Button>
-                        <Button className="p-0 fs-5" variant="light" onClick={()=>{props.setCategory("MacBook")}}>
+                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("MacBook")}}>
                             MacBooks
                         </Button>
-                        <Button className="p-0 fs-5" variant="light" onClick={()=>{props.setCategory("Case")}}>
+                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("Case")}}>
                             Cases
                         </Button>
-                        <Button className="p-0 fs-5" variant="light" onClick={()=>{props.setCategory("Charger")}}>
+                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("Charger")}}>
                             Chargers
                         </Button>
-                        <Button className="p-0 fs-5" variant="light" onClick={()=>{props.setCategory("Accessory")}}>
+                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("Accessory")}}>
                             Accessories
                         </Button>
                     </div>

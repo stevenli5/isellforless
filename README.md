@@ -35,8 +35,14 @@
 
 ### Images
 - Apple logo https://commons.wikimedia.org/wiki/File:Apple_logo_grey.svg
-- iPhone 5s black https://verysmartphones.de/en/iphone-5s/65-75-iphone-5-16-gb-space-gray-unlocked-8859097842954.html
-- iPhone 6s rosegold https://www.notebookcheck.net/Apple-iPhone-6S.151015.0.html
+- iPhone 5s, black, new https://verysmartphones.de/en/iphone-5s/65-75-iphone-5-16-gb-space-gray-unlocked-8859097842954.html
+- iPhone 5s, black, good https://www.pinterest.ca/pin/647251777670887536/
+- iPhone 6s, rosegold, new https://www.notebookcheck.net/Apple-iPhone-6S.151015.0.html
+- iPhone 6s, grey, new https://www.walmart.ca/en/ip/Apple-iPhone-6s-Space-Grey-32GB-A1633-GSM-Factory-Unlocked-Smartphone-Space-Grey-Open-Box/208M677SISE9
+- iPhone 7 plus, black, good https://surplustek.ca/apple-iphone-7-plus-128go-deverouille-bonne-gondition
+- iPhone 7 plus, silver, acceptable https://www.youtube.com/watch?v=h5Jni-vy_5M&ab_channel=TechCrunch
+- iPhone 8, blue, good https://appleinsider.com/inside/iphone-8
+- iPhone 11 pro max, green, acceptable https://technologysshop.com/product/iphone-11-pro-max-second-hands/
 
 ### Miscellaneous
 - Import FontAwesome icons https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react

@@ -35,16 +35,16 @@ export default function Information() {
                 $this = $(this),
                 input = $this.val();
             
-                if (e.keyCode != 8) {
+                if (e.keyCode !== 8) {
                 input = input.replace(/[^0-9]/g, '');
                 let area = input.substr(0, 3);
                 let pre = input.substr(3, 3);
                 let tel = input.substr(6, 4);
                 if ((area.length < 3) && (area.length !== 0)) {
                     output = "(" + area;
-                } else if (area.length == 3 && pre.length < 3) {
+                } else if (area.length === 3 && pre.length < 3) {
                     output = "(" + area + ")" + " " + pre;
-                } else if (area.length == 3 && pre.length == 3) {
+                } else if (area.length === 3 && pre.length === 3) {
                     output = "(" + area + ")" + " " + pre + "-" + tel;
                 }
                 $this.val(output);

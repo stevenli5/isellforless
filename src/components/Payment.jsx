@@ -35,7 +35,7 @@ export default function Payment() {
                 $this = $(this),
                 input = $this.val();
           
-              if (e.keyCode != 8) {
+              if (e.keyCode !== 8) {
                 input = input.replace(/[^0-9]/g, '');
                 let first = input.substr(0, 4);
                 let second = input.substr(4, 4);
@@ -43,13 +43,13 @@ export default function Payment() {
                 let fourth = input.substr(12, 4);
                 if ((first.length < 4) && (first.length !== 0)) {
                   output = first + " ";
-                } else if (first.length == 4 && second.length < 4) {
+                } else if (first.length === 4 && second.length < 4) {
                   output = first + " " + second;
-                } else if (first.length == 4 && second.length == 4 && third.length < 4) {
+                } else if (first.length === 4 && second.length === 4 && third.length < 4) {
                   output = first + " " + second + " " + third;
-                } else if (first.length == 4 && second.length == 4 && third.length == 4 && fourth.length < 4) {
+                } else if (first.length === 4 && second.length === 4 && third.length === 4 && fourth.length < 4) {
                   output = first + " " + second + " " + third + " " + fourth;
-                } else if (first.length == 4 && second.length == 4 && third.length == 4 && fourth.length == 4) {
+                } else if (first.length === 4 && second.length === 4 && third.length === 4 && fourth.length === 4) {
                   output = first + " " + second + " " + third + " " + fourth;
                 }
           
@@ -65,15 +65,15 @@ export default function Payment() {
                 $this = $(this),
                 input = $this.val();
         
-            if (e.keyCode != 8) {
+            if (e.keyCode !== 8) {
                 input = input.replace(/[^0-9]/g, '');
                 let month = input.substr(0, 2);
                 let year = input.substr(2, 2);
                 if ((month.length < 2) && (month.length !== 0)) {
                 output = month + "/";
-                } else if (month.length == 2 && year.length < 2) {
+                } else if (month.length === 2 && year.length < 2) {
                 output = month + "/" + year;
-                } else if (month.length == 2 && year.length == 2) {
+                } else if (month.length === 2 && year.length === 2) {
                 output = month + "/" + year;
                 }
         
@@ -89,7 +89,7 @@ export default function Payment() {
                 $this = $(this),
                 input = $this.val();
         
-            if (e.keyCode != 8) {
+            if (e.keyCode !== 8) {
                 input = input.replace(/[^0-9]/g, '');
                 let cvv = input.substr(0, 3);
                 if ((cvv.length < 4) && (cvv.length !== 0)) {
