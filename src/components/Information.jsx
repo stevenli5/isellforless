@@ -23,9 +23,35 @@ export default function Information() {
     );
     const phoneNumberTooltip = (props) => (
         <Tooltip id="phoneNumber-tooltip" {...props}>
-            Enter your phone number. Example: 6133439866
+            Enter your phone number. Example: (613) 343-9866
         </Tooltip>
     );
+
+    useEffect(()=>{
+        // Phone number input formatting
+        $("input[type='tel']").each(function () {
+            $(this).on("change keyup paste", function (e) {
+                let output,
+                $this = $(this),
+                input = $this.val();
+            
+                if (e.keyCode != 8) {
+                input = input.replace(/[^0-9]/g, '');
+                let area = input.substr(0, 3);
+                let pre = input.substr(3, 3);
+                let tel = input.substr(6, 4);
+                if ((area.length < 3) && (area.length !== 0)) {
+                    output = "(" + area;
+                } else if (area.length == 3 && pre.length < 3) {
+                    output = "(" + area + ")" + " " + pre;
+                } else if (area.length == 3 && pre.length == 3) {
+                    output = "(" + area + ")" + " " + pre + "-" + tel;
+                }
+                $this.val(output);
+                }
+            });
+        });
+    })
 
     return (
         <>
@@ -78,7 +104,7 @@ export default function Information() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={phoneNumberTooltip}
                     >
-                        <input type="tel"  style={{ width: '100%' }}></input>
+                        <input type="tel" maxLength="14" style={{ width: '100%' }}></input>
                     </OverlayTrigger>
                 </div>
             </div>
@@ -86,26 +112,5 @@ export default function Information() {
     );
 }
 
-$("input[type='tel']").each(function () {
-    $(this).on("change keyup paste", function (e) {
-        let output,
-        $this = $(this),
-        input = $this.val();
-    
-        if (e.keyCode != 8) {
-        input = input.replace(/[^0-9]/g, '');
-        let area = input.substr(0, 3);
-        let pre = input.substr(3, 3);
-        let tel = input.substr(6, 4);
-        if ((area.length < 3) && (area.length !== 0)) {
-            output = "(" + area;
-        } else if (area.length == 3 && pre.length < 3) {
-            output = "(" + area + ")" + " " + pre;
-        } else if (area.length == 3 && pre.length == 3) {
-            output = "(" + area + ")" + " " + pre + "-" + tel;
-        }
-        $this.val(output);
-        }
-    });
-});
+
 

@@ -95,7 +95,12 @@ export default function Shipping() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={countryTooltip}
                     >
-                        <input type="text" style={{ width: '100%' }}></input>
+                        <select style={{width: '100%'}}>
+                        <option selected disabled>Select one</option>
+                            <option>Canada</option>
+                            <option>United States</option>
+                            <option>Mexico</option>
+                        </select>
                     </OverlayTrigger>
                 </div>
             </div>

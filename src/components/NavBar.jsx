@@ -7,7 +7,7 @@ import Information from './Information';
 import Payment from './Payment';
 import Shipping from './Shipping';
 import Cart from './Cart';
-import Final from './Final';
+//import Final from './Final';
 
 function CartAndCheckout(props) {
   const [stage, setStage] = useState(0); //stage represents the current "stage" in the checkout process
@@ -24,7 +24,7 @@ function CartAndCheckout(props) {
         <Modal.Header closeButton>
         </Modal.Header>
         <Modal.Body>
-          {stage === 0 ? <Cart cart={props.cart} handleRemove={props.handleRemove} handleClear={props.handleClear}/> : stage === 1 ? <Information /> : stage === 2 ? <Payment /> : stage === 3 ? <Shipping /> : <Final />}
+          {stage === 0 ? <Cart cart={props.cart} handleRemove={props.handleRemove} handleClear={props.handleClear} /> : stage === 1 ? <Information /> : stage === 2 ? <Payment /> : stage === 3 ? <Shipping /> : <></>/*<Final />*/}
 
           <hr />
           {stage !== 0 ? <Button variant="dark" className="float-start" onClick={() => setStage(stage - 1)}>Back</Button> : <></>}
@@ -48,7 +48,7 @@ export default function NavBar(props) {
             alt="iSellForLess logo"
             src={logo}
             className="d-inline-block align-top"
-            style={{ height: '100%', width: '6%' }}
+            style={{ height: '100%', width: '7%' }}
           />{' '}
           <div className="fs-1 fw-bold ms-3" style={{ color: '#B3B3B3' }}><h1>iSellForLess</h1></div>
         </div>
@@ -61,7 +61,7 @@ export default function NavBar(props) {
           />
           <Button variant="outline-light"><FontAwesomeIcon className="fs-4" icon={search} /></Button>
         </Form>
-        <Button variant="secondary"><FontAwesomeIcon icon={cart} style={{ cursor: 'pointer' }} onClick={() => setModalShow1(true)} className="fs-2" />
+        <Button variant="secondary" className="rounded-circle p-2"><FontAwesomeIcon icon={cart} style={{ cursor: 'pointer' }} onClick={() => setModalShow1(true)} className="fs-2" />
         </Button>
       </Container>
       <CartAndCheckout

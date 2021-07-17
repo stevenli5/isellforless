@@ -7,6 +7,7 @@
 - CSS
 - Bootstrap
 - JavaScript
+- jQuery
 - React
 - React Bootstrap
 
@@ -22,11 +23,15 @@
 
 ### JavaScript
 - Props https://reactjs.org/docs/components-and-props.html
+- Phone number input formatting: https://stackoverflow.com/questions/27118900/auto-filling-parentheses-and-hyphen-for-phone-number-input-jquery/43750670
+- Validating regex: https://www.w3schools.com/jsref/jsref_regexp_test.asp
+- Get last two digits of year: https://stackoverflow.com/questions/17306830/how-to-get-2-digit-year-w-javascript
 
 ### React
 - Force refresh https://stackoverflow.com/questions/46240647/react-how-to-force-a-function-component-to-render
 - States https://reactjs.org/docs/state-and-lifecycle.html
 - componentDidMount in functional components with hooks https://medium.com/@timtan93/states-and-componentdidmount-in-functional-components-with-hooks-cac5484d22ad
+- Use jQuery with React https://stackoverflow.com/questions/38518278/how-to-use-jquery-with-reactjs
 
 ### Images
 - Apple logo https://commons.wikimedia.org/wiki/File:Apple_logo_grey.svg
