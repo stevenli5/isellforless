@@ -6,27 +6,30 @@ import { faStar as unfilled } from '@fortawesome/free-regular-svg-icons';
 
 export default function Sidebar(props) {
     return (
-        <div className="col-2 sticky-top text-white" style={{ height: '100vh', backgroundColor: '#212529', paddingTop: '5rem'}}>
-            <div className="pt-4 px-4 mb-5">
+        <div className="col-2 sticky-top text-white" style={{ height: '100vh', backgroundColor: '#212529', paddingTop: '5rem' }}>
+            <div className="pt-4 px-4 mb-4">
                 <h2 class="fs-3"><FontAwesomeIcon icon={hamburger} /> Categories</h2>
                 <div className="py-2">
                     <div className="d-grid gap-2">
-                        <Button className="p-0 fs-5" variant="light">
+                        <Button className="p-0 fs-5" variant="light" onClick={()=>{props.setCategory("All")}}>
+                            All
+                        </Button>
+                        <Button className="p-0 fs-5" variant="light" onClick={()=>{props.setCategory("iPhone")}}>
                             iPhones
                         </Button>
-                        <Button className="p-0 fs-5" variant="light">
+                        <Button className="p-0 fs-5" variant="light" onClick={()=>{props.setCategory("iPad")}}>
                             iPads
                         </Button>
-                        <Button className="p-0 fs-5" variant="light">
+                        <Button className="p-0 fs-5" variant="light" onClick={()=>{props.setCategory("MacBook")}}>
                             MacBooks
                         </Button>
-                        <Button className="p-0 fs-5" variant="light">
+                        <Button className="p-0 fs-5" variant="light" onClick={()=>{props.setCategory("Case")}}>
                             Cases
                         </Button>
-                        <Button className="p-0 fs-5" variant="light">
+                        <Button className="p-0 fs-5" variant="light" onClick={()=>{props.setCategory("Charger")}}>
                             Chargers
                         </Button>
-                        <Button className="p-0 fs-5" variant="light">
+                        <Button className="p-0 fs-5" variant="light" onClick={()=>{props.setCategory("Accessory")}}>
                             Accessories
                         </Button>
                     </div>
@@ -44,14 +47,14 @@ export default function Sidebar(props) {
                                     id="lowestToHighest"
                                     label="Lowest to Highest"
                                     name="priceSort"
-                                    onClick={()=>{props.sortByPrice("L2H")}}
+                                    onClick={() => { props.sortByPrice("L2H") }}
                                 />
                                 <Form.Check
                                     type="radio"
                                     id="highestToLowest"
                                     label="Highest to Lowest"
                                     name="priceSort"
-                                    onClick={()=>{props.sortByPrice("H2L")}}
+                                    onClick={() => { props.sortByPrice("H2L") }}
                                 />
                             </div>
                         </div>
@@ -62,28 +65,28 @@ export default function Sidebar(props) {
                                 id="4stars"
                                 label={<><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={unfilled} /><span> &amp; Up</span></>}
                                 name="reviewSort"
-                                onClick={()=>{props.sortByRating("4")}}
+                                onClick={() => { props.sortByRating("4") }}
                             />
                             <Form.Check
                                 type="radio"
                                 id="3stars"
                                 label={<><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><span> &amp; Up</span></>}
                                 name="reviewSort"
-                                onClick={()=>{props.sortByRating("3")}}
+                                onClick={() => { props.sortByRating("3") }}
                             />
                             <Form.Check
                                 type="radio"
                                 id="2stars"
                                 label={<><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><span> &amp; Up</span></>}
                                 name="reviewSort"
-                                onClick={()=>{props.sortByRating("2")}}
+                                onClick={() => { props.sortByRating("2") }}
                             />
                             <Form.Check
                                 type="radio"
                                 id="1star"
                                 label={<><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><span> &amp; Up</span></>}
                                 name="reviewSort"
-                                onClick={()=>{props.sortByRating("1")}}
+                                onClick={() => { props.sortByRating("1") }}
                             />
                         </div>
                         <div className="mb-3">

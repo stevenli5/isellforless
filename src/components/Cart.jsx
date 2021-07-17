@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingBasket as basket } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBasket as basket, faTimesCircle as remove } from '@fortawesome/free-solid-svg-icons';
 
 export default function Cart(props) {
     const [total, setTotal] = useState(0);
@@ -16,7 +16,7 @@ export default function Cart(props) {
         setTotal(curTotal);
     });
 
-    function handleRemove(item){
+    function handleRemove(item) {
         props.handleRemove(item.id);
         forceUpdate();
     }
@@ -31,11 +31,11 @@ export default function Cart(props) {
             <div>
                 {props.cart.map(item =>
                 (
-                    <div className="row mb-2">
+                    <div className="row mb-3">
                         <div className="col-4"><b>{item.name}</b><br />{item.quality}<br />{item.colour}</div>
                         <div className="col-3 text-end"><img src={item.image} style={{ height: '7rem', width: '60%' }}></img></div>
                         <div className="col-4 align-bottom text-end">${item.price}</div>
-                        <Button className="col-1 text-end" onClick={()=>{handleRemove(item)}}>X</Button>
+                        <div className="col-1 d-flex"><Button variant="danger" className="my-auto p-2 text-middle" onClick={() => { handleRemove(item) }}><FontAwesomeIcon className="fs-3" icon={remove} /></Button></div>
                     </div>)
                 )}
             </div>

@@ -25,6 +25,7 @@
 
 ### React
 - Force refresh https://stackoverflow.com/questions/46240647/react-how-to-force-a-function-component-to-render
+- States https://reactjs.org/docs/state-and-lifecycle.html
 
 ### Images
 - Apple logo https://commons.wikimedia.org/wiki/File:Apple_logo_grey.svg

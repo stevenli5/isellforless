@@ -141,11 +141,9 @@ function App() {
   }
 
   function handleRemove(id){
-    //console.log(id);
     let i = 0;
     for (; i < cart.length; i++) {
       if(cart[i].id===id){
-        //console.log(cart[i].id);
         break;
       } 
     }
@@ -176,11 +174,29 @@ function App() {
     setProducts(sortedProducts);
   }
 
+  function setCategory(type){
+    let filteredProducts = [...allProducts];
+    if(type === "iPhone"){
+      filteredProducts = filteredProducts.filter((prod)=>prod.category==="iPhone");
+    } else if (type === "iPad") {
+      filteredProducts = filteredProducts.filter((prod)=>prod.category==="iPad");
+    } else if (type === "MacBook") {
+      filteredProducts = filteredProducts.filter((prod)=>prod.category==="MacBook");
+    } else if (type === "Case") {
+      filteredProducts = filteredProducts.filter((prod)=>prod.category==="Case");
+    } else if (type === "Charger") {
+      filteredProducts = filteredProducts.filter((prod)=>prod.category==="Charger");
+    } else if (type === "Accessory") {
+      filteredProducts = filteredProducts.filter((prod)=>prod.category==="Accessory");
+    } 
+    setProducts(filteredProducts);
+  }
+
   return (
     <div className="App">
       <NavBar cart={cart} handleRemove={handleRemove}/>
       <div className="row">
-        <Sidebar sortByPrice={sortByPrice} sortByRating={sortByRating}/>
+        <Sidebar sortByPrice={sortByPrice} sortByRating={sortByRating} setCategory={setCategory}/>
         <div className="col-10 px-4 mt-5 bg-light d-flex flex-wrap" style={{paddingTop: '4rem'}}>
           {products.map((item) => (<ProductCard {...item} handleAdd={handleAdd} />))}
         </div>

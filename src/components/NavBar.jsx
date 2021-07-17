@@ -9,7 +9,7 @@ import Shipping from './Shipping';
 import Cart from './Cart';
 
 function CartAndCheckout(props) {
-  const [stage, setStage] = useState(0);//stage represents the current "stage" in the checkout process
+  const [stage, setStage] = useState(0); //stage represents the current "stage" in the checkout process
 
   return (
 
@@ -26,8 +26,8 @@ function CartAndCheckout(props) {
           {stage === 0 ? <Cart cart={props.cart} handleRemove={props.handleRemove}/> : stage === 1 ? <Information /> : stage === 2 ? <Payment /> : <Shipping />}
 
           <hr />
-          {stage !== 0 ? <Button className="float-start" onClick={() => setStage(stage - 1)}>Back</Button> : <></>}
-          {stage !== 3 ? <Button className="float-end" onClick={() => setStage(stage + 1)}>Next</Button> : <></>}
+          {stage !== 0 ? <Button variant="dark" className="float-start" onClick={() => setStage(stage - 1)}>Back</Button> : <></>}
+          {stage !== 3 ? <Button variant="dark" className="float-end" onClick={() => setStage(stage + 1)}>Next</Button> : <></>}
         </Modal.Body>
       </Modal>
     </>
