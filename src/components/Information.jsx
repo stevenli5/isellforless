@@ -51,7 +51,7 @@ export default function Information() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={lastNameTooltip}
                     >
-                        <input type="last" style={{ width: '100%' }}></input>
+                        <input type="lname" style={{ width: '100%' }}></input>
                     </OverlayTrigger>
                 </div>
             </div>

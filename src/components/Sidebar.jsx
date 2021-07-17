@@ -60,27 +60,38 @@ export default function Sidebar(props) {
                             <h3 className="fs-5">Average Rating</h3>
                             <Form.Check
                                 type="radio"
+                                id="5stars"
+                                label={<><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /></>}
+                                name="reviewSort"
+                                onClick={()=>{props.sortByRating("5")}}
+                            />
+                            <Form.Check
+                                type="radio"
                                 id="4stars"
                                 label={<><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={unfilled} /><span> &amp; Up</span></>}
                                 name="reviewSort"
+                                onClick={()=>{props.sortByRating("4")}}
                             />
                             <Form.Check
                                 type="radio"
                                 id="3stars"
                                 label={<><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><span> &amp; Up</span></>}
                                 name="reviewSort"
+                                onClick={()=>{props.sortByRating("3")}}
                             />
                             <Form.Check
                                 type="radio"
                                 id="2stars"
                                 label={<><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><span> &amp; Up</span></>}
                                 name="reviewSort"
+                                onClick={()=>{props.sortByRating("2")}}
                             />
                             <Form.Check
                                 type="radio"
                                 id="1star"
                                 label={<><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><span> &amp; Up</span></>}
                                 name="reviewSort"
+                                onClick={()=>{props.sortByRating("1")}}
                             />
                         </div>
                         <div className="mb-3">

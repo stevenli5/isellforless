@@ -25,7 +25,7 @@ const allProducts = [{
   category: "iPad",
   name: "iPad Pro 11 inch",
   image: iphone6s,
-  price: "1000.00",
+  price: "432400.00",
   rating: 3,
   quality: "Used - Good",
   description: "",
@@ -36,7 +36,7 @@ const allProducts = [{
   category: "iPad",
   name: "iPad Pro 1ss inch",
   image: iphone6s,
-  price: "1000.00",
+  price: "130.00",
   rating: 1,
   quality: "Used - Like New",
   description: "",
@@ -153,19 +153,34 @@ function App() {
   }
 
   function sortByPrice(type){
+    let sortedProducts = [...products];
     if(type==="L2H"){
-
+      sortedProducts.sort((prod1, prod2)=>{return Number(prod1.price)-Number(prod2.price)});
     } else if (type==="H2L") {
-
+      sortedProducts.sort((prod1, prod2)=>{return Number(prod2.price)-Number(prod1.price)});
     }
+    setProducts(sortedProducts);
+  }
 
+  function sortByRating(type){
+    let sortedProducts = [...products];
+    if(type === "1"){
+      sortedProducts = sortedProducts.filter((prod)=>prod.rating>=1);
+    } else if (type === "2") {
+      sortedProducts = sortedProducts.filter((prod)=>prod.rating>=2);
+    } else if (type === "3") {
+      sortedProducts = sortedProducts.filter((prod)=>prod.rating>=3);
+    }else if (type === "4") {
+      sortedProducts = sortedProducts.filter((prod)=>prod.rating>=4);
+    }
+    setProducts(sortedProducts);
   }
 
   return (
     <div className="App">
       <NavBar cart={cart} handleRemove={handleRemove}/>
       <div className="row">
-        <Sidebar sortByPrice={sortByPrice}/>
+        <Sidebar sortByPrice={sortByPrice} sortByRating={sortByRating}/>
         <div className="col-10 px-4 mt-5 bg-light d-flex flex-wrap" style={{paddingTop: '4rem'}}>
           {products.map((item) => (<ProductCard {...item} handleAdd={handleAdd} />))}
         </div>

@@ -1,7 +1,7 @@
 import { Container, Navbar, Form, FormControl, Button, Modal } from "react-bootstrap";
 import logo from '../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart as cartIcon } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBasket as cart, faSearch as search } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import Information from './Information';
 import Payment from './Payment';
@@ -58,9 +58,9 @@ export default function NavBar(props) {
             className="me-2"
             aria-label="Search"
           />
-          <Button variant="outline-light">Search</Button>
+          <Button variant="outline-light"><FontAwesomeIcon className="fs-4" icon={search} /></Button>
         </Form>
-        <Button variant="secondary"><FontAwesomeIcon icon={cartIcon} style={{ cursor: 'pointer' }} onClick={() => setModalShow1(true)} className="fs-2" />
+        <Button variant="secondary"><FontAwesomeIcon icon={cart} style={{ cursor: 'pointer' }} onClick={() => setModalShow1(true)} className="fs-2" />
         </Button>
       </Container>
       <CartAndCheckout
