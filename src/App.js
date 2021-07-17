@@ -2,7 +2,7 @@ import './styles/App.css';
 import NavBar from './components/NavBar';
 import Sidebar from './components/Sidebar';
 import ProductCard from './components/ProductCard';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import iphone5sBlack from './assets/products/iphone5s-black.jpg';
 import iphone6s from './assets/products/iphone6s-grey.png';
 import iphone11promax from './assets/products/iphone11promax.jpg';
@@ -135,6 +135,10 @@ const allProducts = [{
 function App() {
   const [products, setProducts] = useState(allProducts);
   const [cart, setCart] = useState([]);
+  const [priceSortType, setPriceSortType] = useState("");
+  const [ratingSortType, setRatingSortType] = useState("");
+  const [categoryType, setCategoryType] = useState("");
+  const [qualitySortType, setQualitySortType] = useState("");
 
   function handleAdd(item){
     cart.push(item);
@@ -150,53 +154,59 @@ function App() {
     cart.pop(i);
   }
 
-  function sortByPrice(type){
-    let sortedProducts = [...products];
-    if(type==="L2H"){
+  useEffect(()=>{
+    let sortedProducts = [...allProducts];
+
+    //sort price
+    if(priceSortType==="L2H"){
       sortedProducts.sort((prod1, prod2)=>{return Number(prod1.price)-Number(prod2.price)});
-    } else if (type==="H2L") {
+    } else if (priceSortType==="H2L") {
       sortedProducts.sort((prod1, prod2)=>{return Number(prod2.price)-Number(prod1.price)});
     }
-    setProducts(sortedProducts);
-  }
 
-  function sortByRating(type){
-    let sortedProducts = [...allProducts];
-    if(type === "1"){
+    //sort rating
+    if(ratingSortType === "1"){
       sortedProducts = sortedProducts.filter((prod)=>prod.rating>=1);
-    } else if (type === "2") {
+    } else if (ratingSortType === "2") {
       sortedProducts = sortedProducts.filter((prod)=>prod.rating>=2);
-    } else if (type === "3") {
+    } else if (ratingSortType === "3") {
       sortedProducts = sortedProducts.filter((prod)=>prod.rating>=3);
-    } else if (type === "4") {
+    } else if (ratingSortType === "4") {
       sortedProducts = sortedProducts.filter((prod)=>prod.rating>=4);
-    } 
-    setProducts(sortedProducts);
-  }
+    }
 
-  function setCategory(type){
-    let filteredProducts = [...allProducts];
-    if(type === "iPhone"){
-      filteredProducts = filteredProducts.filter((prod)=>prod.category==="iPhone");
-    } else if (type === "iPad") {
-      filteredProducts = filteredProducts.filter((prod)=>prod.category==="iPad");
-    } else if (type === "MacBook") {
-      filteredProducts = filteredProducts.filter((prod)=>prod.category==="MacBook");
-    } else if (type === "Case") {
-      filteredProducts = filteredProducts.filter((prod)=>prod.category==="Case");
-    } else if (type === "Charger") {
-      filteredProducts = filteredProducts.filter((prod)=>prod.category==="Charger");
-    } else if (type === "Accessory") {
-      filteredProducts = filteredProducts.filter((prod)=>prod.category==="Accessory");
+    //sort category
+    if(categoryType === "iPhone"){
+      sortedProducts = sortedProducts.filter((prod)=>prod.category==="iPhone");
+    } else if (categoryType === "iPad") {
+      sortedProducts = sortedProducts.filter((prod)=>prod.category==="iPad");
+    } else if (categoryType === "MacBook") {
+      sortedProducts = sortedProducts.filter((prod)=>prod.category==="MacBook");
+    } else if (categoryType === "Case") {
+      sortedProducts = sortedProducts.filter((prod)=>prod.category==="Case");
+    } else if (categoryType === "Charger") {
+      sortedProducts = sortedProducts.filter((prod)=>prod.category==="Charger");
+    } else if (categoryType === "Accessory") {
+      sortedProducts = sortedProducts.filter((prod)=>prod.category==="Accessory");
     } 
-    setProducts(filteredProducts);
-  }
+
+    //sort quality
+    if(qualitySortType === "Like New"){
+      sortedProducts = sortedProducts.filter((prod)=>prod.quality==="Used - Like New");
+    } else if (qualitySortType === "Good") {
+      sortedProducts = sortedProducts.filter((prod)=>prod.quality==="Used - Good");
+    } else if (qualitySortType === "Acceptable") {
+      sortedProducts = sortedProducts.filter((prod)=>prod.quality==="Used - Acceptable");
+    } 
+
+    setProducts(sortedProducts);
+  });
 
   return (
     <div className="App">
       <NavBar cart={cart} handleRemove={handleRemove}/>
       <div className="row">
-        <Sidebar sortByPrice={sortByPrice} sortByRating={sortByRating} setCategory={setCategory}/>
+        <Sidebar sortByPrice={setPriceSortType} sortByRating={setRatingSortType} setCategory={setCategoryType} sortByQuality={setQualitySortType}/>
         <div className="col-10 px-4 mt-5 bg-light d-flex flex-wrap" style={{paddingTop: '4rem'}}>
           {products.map((item) => (<ProductCard {...item} handleAdd={handleAdd} />))}
         </div>

@@ -1,7 +1,6 @@
 import { Button, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar as filled } from '@fortawesome/free-solid-svg-icons';
-import { faBars as hamburger, faArrowsAltV as arrows, faTags as price, faStarHalfAlt as rating, faAward as quality } from '@fortawesome/free-solid-svg-icons';
+import { faStar as filled, faBars as hamburger, faArrowsAltV as arrows, faTags as price, faStarHalfAlt as rating, faAward as quality } from '@fortawesome/free-solid-svg-icons';
 import { faStar as unfilled } from '@fortawesome/free-regular-svg-icons';
 
 export default function Sidebar(props) {
@@ -96,24 +95,28 @@ export default function Sidebar(props) {
                                 id="any"
                                 label="Any"
                                 name="qualitySort"
+                                onClick={() => { props.sortByQuality("Any") }}
                             />
                             <Form.Check
                                 type="radio"
                                 id="likeNew"
                                 label="Used - Like New"
                                 name="qualitySort"
+                                onClick={() => { props.sortByQuality("Like New") }}
                             />
                             <Form.Check
                                 type="radio"
                                 id="good"
                                 label="Used - Good"
                                 name="qualitySort"
+                                onClick={() => { props.sortByQuality("Good") }}
                             />
                             <Form.Check
                                 type="radio"
                                 id="acceptable"
                                 label="Used - Acceptable"
                                 name="qualitySort"
+                                onClick={() => { props.sortByQuality("Acceptable") }}
                             />
                         </div>
                     </Form>
