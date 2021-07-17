@@ -2,7 +2,7 @@ import { Container, Navbar, Form, FormControl, Button, Modal } from "react-boots
 import logo from '../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart as cartIcon } from '@fortawesome/free-solid-svg-icons';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Information from './Information';
 import Payment from './Payment';
 import Shipping from './Shipping';
@@ -14,23 +14,23 @@ function CartAndCheckout(props) {
   return (
 
     <>
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-      </Modal.Header>
-      <Modal.Body>
-          {stage===0 ? <Cart cart={props.cart}/> : stage===1 ? <Information /> : stage===2 ? <Payment /> : <Shipping />}
-      </Modal.Body>
-      <Modal.Footer>
-        {stage!==0 ? <Button onClick={() => setStage(stage - 1)}>Back</Button> : <></>}
-        {stage!==3 ? <Button onClick={() => setStage(stage + 1)}>Next</Button> : <></>}
-      </Modal.Footer>
-    </Modal>
-  </>
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+        </Modal.Header>
+        <Modal.Body>
+          {stage === 0 ? <Cart cart={props.cart} handleRemove={props.handleRemove}/> : stage === 1 ? <Information /> : stage === 2 ? <Payment /> : <Shipping />}
+
+          <hr />
+          {stage !== 0 ? <Button className="float-start" onClick={() => setStage(stage - 1)}>Back</Button> : <></>}
+          {stage !== 3 ? <Button className="float-end" onClick={() => setStage(stage + 1)}>Next</Button> : <></>}
+        </Modal.Body>
+      </Modal>
+    </>
   );
 }
 
@@ -60,15 +60,16 @@ export default function NavBar(props) {
           />
           <Button variant="outline-light">Search</Button>
         </Form>
-        <Button variant="dark"><FontAwesomeIcon icon={cartIcon} style={{ cursor: 'pointer' }} onClick={() => setModalShow1(true)} className="fs-2"/>
+        <Button variant="secondary"><FontAwesomeIcon icon={cartIcon} style={{ cursor: 'pointer' }} onClick={() => setModalShow1(true)} className="fs-2" />
         </Button>
       </Container>
       <CartAndCheckout
         show={modalShow1}
         onHide={() => setModalShow1(false)}
         cart={props.cart}
+        handleRemove={props.handleRemove}
       />
     </Navbar>
-    
+
   );
 }

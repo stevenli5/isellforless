@@ -22,6 +22,9 @@
 ### JavaScript
 - Props https://reactjs.org/docs/components-and-props.html
 
+### React
+- Force refresh https://stackoverflow.com/questions/46240647/react-how-to-force-a-function-component-to-render
+
 ### Images
 - Apple logo https://commons.wikimedia.org/wiki/File:Apple_logo_grey.svg
 - iPhone 5s black https://verysmartphones.de/en/iphone-5s/65-75-iphone-5-16-gb-space-gray-unlocked-8859097842954.html

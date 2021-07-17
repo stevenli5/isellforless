@@ -1,13 +1,14 @@
 import { Button, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar as filled } from '@fortawesome/free-solid-svg-icons'
+import { faBars as hamburger } from '@fortawesome/free-solid-svg-icons'
 import { faStar as unfilled } from '@fortawesome/free-regular-svg-icons'
 
 export default function Sidebar() {
     return (
         <div className="col-2 sticky-top text-white" style={{ height: '100vh', backgroundColor: '#212529', paddingTop: '5rem'}}>
             <div className="pt-4 px-4 mb-5">
-                <h2 class="fs-3">Categories</h2>
+                <h2 class="fs-3"><FontAwesomeIcon icon={hamburger} /> Categories</h2>
                 <div className="py-2">
                     <div className="d-grid gap-2">
                         <Button className="p-0 fs-5" variant="light">

@@ -50,7 +50,7 @@ export default function ProductCard(props) {
   const [modalShow, setModalShow] = React.useState(false);
     return (
       <>
-        <Card className="ms-3 mb-3" style={{ width: '18rem', cursor: 'pointer', borderColor: '#000000' }} onClick={() => setModalShow(true)}>
+        <Card className="mx-5 mb-5" style={{ width: '18rem', cursor: 'pointer', borderColor: '#000000' }} onClick={() => setModalShow(true)}>
         <Card.Img variant="top" src={props.image} style={{height: '18rem', width: '100%'}}/>
         
         <Card.Body>

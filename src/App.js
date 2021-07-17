@@ -65,6 +65,7 @@ const allProducts = [{
   reviews: ["", ""]
 },
 {
+  id: "5",
   category: "iPad",
   name: "iPad Pro 1ss inch",
   image: iphone6s,
@@ -75,6 +76,7 @@ const allProducts = [{
   reviews: ["", ""]
 },
 {
+  id: "6",
   category: "iPad",
   name: "iPad Pro 1ss inch",
   image: iphone6s,
@@ -85,6 +87,7 @@ const allProducts = [{
   reviews: ["", ""]
 },
 {
+  id: "7",
   category: "iPad",
   name: "iPad Pro 1ss inch",
   image: iphone6s,
@@ -95,6 +98,7 @@ const allProducts = [{
   reviews: ["", ""]
 },
 {
+  id: "8",
   category: "iPad",
   name: "iPad Pro 1ss inch",
   image: iphone6s,
@@ -105,6 +109,7 @@ const allProducts = [{
   reviews: ["", ""]
 },
 {
+  id: "9",
   category: "iPad",
   name: "iPad Pro 1ss inch",
   image: iphone6s,
@@ -115,6 +120,7 @@ const allProducts = [{
   reviews: ["", ""]
 },
 {
+  id: "10",
   category: "iPad",
   name: "iPad Pro 1ss inch",
   image: iphone6s,
@@ -131,16 +137,27 @@ function App() {
   const [cart, setCart] = useState([]);
 
   function handleAdd(item){
-    //if(item.id not in cart)
     cart.push(item);
+  }
+
+  function handleRemove(id){
+    //console.log(id);
+    let i = 0;
+    for (; i < cart.length; i++) {
+      if(cart[i].id===id){
+        //console.log(cart[i].id);
+        break;
+      } 
+    }
+    cart.pop(i);
   }
 
   return (
     <div className="App">
-      <NavBar cart={cart}/>
+      <NavBar cart={cart} handleRemove={handleRemove}/>
       <div className="row">
         <Sidebar />
-        <div className="col-10 px-4 mt-5 mb-3 bg-light d-flex flex-wrap" style={{paddingTop: '4rem'}}>
+        <div className="col-10 px-4 mt-5 bg-light d-flex flex-wrap" style={{paddingTop: '4rem'}}>
           {products.map((item) => (<ProductCard {...item} handleAdd={handleAdd} />))}
         </div>
       </div>

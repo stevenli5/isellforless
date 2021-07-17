@@ -7,27 +7,25 @@ export default function Payment() {
             <div className="col-2">
             <label className="fw-bold">Name on Card</label>
             </div>
-            <div className="col-10">
+            <div className="col-4">
+                <input type="text" style={{width: '100%'}}></input>
+            </div>
+            <div className="col-2">
+            <label className="fw-bold ms-1">Card&nbsp;Number</label>
+            </div>
+            <div className="col-4">
                 <input type="text" style={{width: '100%'}}></input>
             </div>
         </div>
         <div className="row my-1">
             <div className="col-2">
-            <label className="fw-bold">Card Number</label>
-            </div>
-            <div className="col-10">
-                <input type="text" style={{width: '100%'}}></input>
-            </div>
-        </div>
-        <div className="row my-1">
-            <div className="col-2">
-            <label className="fw-bold">Expiry Date</label>
+            <label className="fw-bold ms-1 ps-3">Expiry Date</label>
             </div>
             <div className="col-4">
                 <input type="text" style={{width: '100%'}}></input>
             </div>
             <div className="col-2">
-            <label className="fw-bold ms-2 ps-5">CVV</label>
+            <label className="fw-bold ms-4 ps-5">CVV</label>
             </div>
             <div className="col-4">
                 <input type="text" style={{width: '100%'}}></input>
