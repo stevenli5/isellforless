@@ -2,7 +2,7 @@ import { Container, Navbar, Form, FormControl, Button } from "react-bootstrap";
 import logo from '../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingBasket as cart, faSearch as search } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react';
+import React from 'react';
 import Checkout from './Checkout'
 
 export default function NavBar(props) {
@@ -11,7 +11,7 @@ export default function NavBar(props) {
 
   let searchInput = null;
 
-  function handleSearch(event){
+  function handleSearch(event) {
     event.preventDefault();
     props.handleSearch(searchInput.value);
   }

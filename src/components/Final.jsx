@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListAlt as checklist, faIdCard as card, faCreditCard as ccard, faShippingFast as truck, faTags as price } from '@fortawesome/free-solid-svg-icons';
 

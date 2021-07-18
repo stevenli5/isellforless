@@ -8,29 +8,29 @@ export default function Sidebar(props) {
     return (
         <div className="col-2 sticky-top text-white" style={{ height: '100vh', backgroundColor: '#212529', paddingTop: '5rem' }}>
             <div className="pt-4 px-4 mb-5">
-                <h2 class="fs-3"><FontAwesomeIcon className="me-1" icon={hamburger} /> Categories</h2>
+                <h2 className="fs-3"><FontAwesomeIcon className="me-1" icon={hamburger} /> Categories</h2>
                 <div className="py-2">
                     <div className="d-grid gap-2">
-                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("All")}}>
-                        <FontAwesomeIcon className="me-1" icon={apple} /> All
+                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={() => { props.setCategory("All") }}>
+                            <FontAwesomeIcon className="me-1" icon={apple} /> All
                         </Button>
-                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("iPhone")}}>
+                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={() => { props.setCategory("iPhone") }}>
                             <FontAwesomeIcon className="me-1" icon={phone} /> iPhones
                         </Button>
-                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("iPad")}}>
-                        <FontAwesomeIcon className="me-1" icon={tablet} /> iPads
+                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={() => { props.setCategory("iPad") }}>
+                            <FontAwesomeIcon className="me-1" icon={tablet} /> iPads
                         </Button>
-                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("MacBook")}}>
-                        <FontAwesomeIcon className="me-1" icon={laptop} /> MacBooks
+                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={() => { props.setCategory("MacBook") }}>
+                            <FontAwesomeIcon className="me-1" icon={laptop} /> MacBooks
                         </Button>
-                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("Apple Watch")}}>
-                        <FontAwesomeIcon className="me-1" icon={watch} /> Apple Watches
+                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={() => { props.setCategory("Apple Watch") }}>
+                            <FontAwesomeIcon className="me-1" icon={watch} /> Apple Watches
                         </Button>
                     </div>
                 </div>
             </div>
             <div className="px-4">
-                <h2 class="fs-3 mb-3"><FontAwesomeIcon icon={arrows} /> Sort</h2>
+                <h2 className="fs-3 mb-3"><FontAwesomeIcon icon={arrows} /> Sort</h2>
                 <div className="ps-4 pb-2">
                     <Form>
                         <div className="mb-3">
@@ -116,11 +116,10 @@ export default function Sidebar(props) {
                         </div>
                     </Form>
                     <div className="mb-3 text-end">
-                        <Button className="p-1" variant="secondary" onClick={()=>{window.location.reload()}}>Reset Fields</Button>
+                        <Button className="p-1" variant="secondary" onClick={() => { window.location.reload() }}>Reset Fields</Button>
                     </div>
                 </div>
             </div>
         </div>
     );
 }
-

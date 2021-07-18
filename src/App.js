@@ -37,7 +37,7 @@ function App() {
     let sortedProducts = [...allProducts];
 
     //search
-    if(searchQuery !==""){
+    if (searchQuery !== "") {
       sortedProducts = sortedProducts.filter((prod) => {
         return prod.name.toLowerCase().includes(searchQuery.toLowerCase()) || prod.colour.toLowerCase().includes(searchQuery.toLowerCase()) || prod.quality.toLowerCase().includes(searchQuery.toLowerCase());
       });
@@ -87,11 +87,11 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar cart={cart} handleRemove={handleRemove} handleClear={setCart} handleSearch={setSearchQuery}/>
+      <NavBar cart={cart} handleRemove={handleRemove} handleClear={setCart} handleSearch={setSearchQuery} />
       <div className="row">
         <Sidebar sortByPrice={setPriceSortType} sortByRating={setRatingSortType} setCategory={setCategoryType} sortByQuality={setQualitySortType} />
         <div className="col-10 px-4 mt-5 bg-light d-flex flex-wrap" style={{ paddingTop: '4rem' }}>
-          {products.map((item) => (<ProductCard {...item} handleAdd={handleAdd}/>))}
+          {products.map((item) => (<ProductCard {...item} handleAdd={handleAdd} />))}
           <Button variant="secondary" className="shadow rounded-circle me-3 mb-3 p-2" style={{ position: 'fixed', right: '0', bottom: '0' }} onClick={() => setModalShow(true)}><FontAwesomeIcon className="fs-1" icon={info} /></Button>
           <Help
             show={modalShow}

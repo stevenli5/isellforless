@@ -36,7 +36,7 @@ export default function Checkout(props) {
       curTotal += Number(item.price);
     });
     setTotal(curTotal);
-  });
+  }, [props.cart]);
 
   function handleConfirm() {
     setFirstName("");
@@ -57,14 +57,14 @@ export default function Checkout(props) {
     alert("Thank you for shopping at iSellForLess!");
   }
 
-  function handleNext(){
-    if(stage===1 && (firstName==="" || lastName==="" || email==="")){
+  function handleNext() {
+    if (stage === 1 && (firstName === "" || lastName === "" || email === "")) {
       setShowErrorMsg(true);
       return;
-    } else if(stage===2 && (cardName==="" || cardNum==="" || cardDate==="" || cardCVV==="")){
+    } else if (stage === 2 && (cardName === "" || cardNum === "" || cardDate === "" || cardCVV === "")) {
       setShowErrorMsg(true);
       return;
-    } else if(stage===3 && (address==="" || postal==="" || city==="" || province==="" || country==="")){
+    } else if (stage === 3 && (address === "" || postal === "" || city === "" || province === "" || country === "")) {
       setShowErrorMsg(true);
       return;
     }
@@ -72,7 +72,7 @@ export default function Checkout(props) {
     setStage(stage + 1);
   }
 
-  function handleBack(){
+  function handleBack() {
     setShowErrorMsg(false);
     setStage(stage - 1);
   }
@@ -88,9 +88,9 @@ export default function Checkout(props) {
         <Modal.Header style={{ backgroundColor: '#E5E5E5' }} closeButton>
           <Modal.Title>
             {stage === 0 ? <div><span className="fw-bold text-success">Cart</span> <FontAwesomeIcon className="mx-1" icon={arrow} /> Information <FontAwesomeIcon className="mx-1" icon={arrow} /> Payment <FontAwesomeIcon className="mx-1" icon={arrow} /> Shipping <FontAwesomeIcon className="mx-1" icon={arrow} /> Summary</div> :
-              stage === 1 ? <div><span className="fw-bold text-success">Cart <FontAwesomeIcon className="mx-1" icon={arrow} /> Information</span> <FontAwesomeIcon className="mx-1" icon={arrow} /> Payment <FontAwesomeIcon className="mx-1" icon={arrow} /> Shipping <FontAwesomeIcon className="mx-1" icon={arrow} /> Summary</div> : 
+              stage === 1 ? <div><span className="fw-bold text-success">Cart <FontAwesomeIcon className="mx-1" icon={arrow} /> Information</span> <FontAwesomeIcon className="mx-1" icon={arrow} /> Payment <FontAwesomeIcon className="mx-1" icon={arrow} /> Shipping <FontAwesomeIcon className="mx-1" icon={arrow} /> Summary</div> :
                 stage === 2 ? <div><span className="fw-bold text-success">Cart <FontAwesomeIcon className="mx-1" icon={arrow} /> Information <FontAwesomeIcon className="mx-1" icon={arrow} /> Payment</span> <FontAwesomeIcon className="mx-1" icon={arrow} /> Shipping <FontAwesomeIcon className="mx-1" icon={arrow} /> Summary</div> :
-                  stage === 3 ? <div><span className="fw-bold text-success">Cart <FontAwesomeIcon className="mx-1" icon={arrow} /> Information <FontAwesomeIcon className="mx-1" icon={arrow} /> Payment <FontAwesomeIcon className="mx-1" icon={arrow} /> Shipping</span> <FontAwesomeIcon className="mx-1" icon={arrow} /> Summary</div> : 
+                  stage === 3 ? <div><span className="fw-bold text-success">Cart <FontAwesomeIcon className="mx-1" icon={arrow} /> Information <FontAwesomeIcon className="mx-1" icon={arrow} /> Payment <FontAwesomeIcon className="mx-1" icon={arrow} /> Shipping</span> <FontAwesomeIcon className="mx-1" icon={arrow} /> Summary</div> :
                     <div><span className="fw-bold text-success">Cart <FontAwesomeIcon className="mx-1" icon={arrow} /> Information <FontAwesomeIcon className="mx-1" icon={arrow} /> Payment <FontAwesomeIcon className="mx-1" icon={arrow} /> Shipping <FontAwesomeIcon className="mx-1" icon={arrow} /> Summary</span></div>}
           </Modal.Title>
         </Modal.Header>

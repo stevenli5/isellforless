@@ -31,8 +31,9 @@ import watchsecellular40PistachioAcceptable from './assets/products/watches/watc
 import watch6cellular44GreyNew from './assets/products/watches/watch6cellular44-grey-new.png';
 
 const allProducts = [
-    // iPhones
-    {
+  
+  // iPhones
+  {
     id: "0",
     category: "iPhone",
     name: "iPhone 5s 64GB",
@@ -176,7 +177,7 @@ const allProducts = [
     colour: "Sky Blue",
     description: "A beautiful sky blue iPad Air.",
     reviews: ["Saying this phone is like new is a bit of a reach. Do better, guys.", "Loving this phone, thank you!"],
-    reviewers: ["Cameron T. from Clarence-Rockland", "Jacob G. from Kenora"]
+    reviewers: ["Cameron T. from Rockland", "Jacob G. from Kenora"]
   },
   {
     id: "11",
@@ -188,8 +189,8 @@ const allProducts = [
     quality: "Used - Good",
     colour: "Space Grey",
     description: "A slightly used iPad Air, perfect for those who are in need for a tablet.",
-    reviews: ["I feel like this iPad is busted. Why did I buy an iPad Air, should've gotten an iPad Pro.", "Not bad for the price... still feel like I got scammed though."],
-    reviewers: ["Davis D. from Markham", "Harnza O. from Greater Sudbury"]
+    reviews: ["I feel like this iPad is busted. Why did I buy an iPad Air?!", "Not bad for the price... still feel like I got scammed though."],
+    reviewers: ["Davis D. from Markham", "Harnza O. from Sudbury"]
   },
   {
     id: "12",
@@ -201,7 +202,7 @@ const allProducts = [
     quality: "Used - Acceptable",
     colour: "Silver",
     description: "A heavily used iPad Mini 4 - in liquidation.",
-    reviews: ["WHAT IS THIS LOL I DIDN'T MEAN TO BUY THIS TRASH IPAD. I DEMAND A FULL REFUND!!", "Who thought it was a good idea to sell this trash?"],
+    reviews: ["WHAT IS THIS LOL I DIDN'T MEAN TO BUY THIS TRASH IPAD!", "Who thought it was a good idea to sell this trash?"],
     reviewers: ["Jim H. from Brant", "Scott P. from Guelph"]
   },
   {
@@ -244,7 +245,7 @@ const allProducts = [
     colour: "Space Grey",
     description: "Nearly mint condition MacBook Air, can't go wrong!",
     reviews: ["Works great and looks great, thanks!", "The price is a bit high but Apple products are generally great quality."],
-    reviewers: ["Shirley J. from Haldimand County", "Ted C. from Kingston"]
+    reviewers: ["Shirley J. from Sudbury", "Ted C. from Kingston"]
   },
   {
     id: "16",
@@ -256,7 +257,7 @@ const allProducts = [
     quality: "Used - Acceptable",
     colour: "Silver",
     description: "Heavily used MacBook air, but still usable.",
-    reviews: ["Why is this even in the store? Take it down.", "I was on hold for 37 seconds on the phone when I was asking for the manager. This is unacceptable. I'm never buying here again."],
+    reviews: ["Why is this even in the store? Take it down.", "I was on hold for 37 seconds on the phone when I was asking for the manager. This is unacceptable."],
     reviewers: ["Charles B. from Kawartha Lakes", "Xavier X. from Brockville"]
   },
   {
@@ -337,7 +338,7 @@ const allProducts = [
     quality: "Used - Acceptable",
     colour: "Pistachio",
     description: "A beautiful creamy green colour to complement your Apple Watch SE!",
-    reviews: ["World's ugliest colour. This colour reminds me of my dark past... love it!", "My watch is very slow. Customer service?"],
+    reviews: ["World's ugliest colour; it reminds me of my dark past... love it!", "My watch is very slow."],
     reviewers: ["Barry B. from Barrie", "Norm S. from Belleville"]
   },
   {
@@ -351,8 +352,8 @@ const allProducts = [
     colour: "Space Grey",
     description: "Get this while it's still available! Virtually a brand new Apple Watch series 6 cellular at a competitive price!",
     reviews: ["Lightning quick watch, thank you iSellForLess!", "Amazing quality, works great!"],
-    reviewers: ["Adam S. from Norfolk County", "April L. from Etobicoke"]
+    reviewers: ["Adam S. from Ottawa", "April L. from Etobicoke"]
   },
-  ]
+]
 
-  export default allProducts;
+export default allProducts;

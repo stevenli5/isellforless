@@ -43,7 +43,7 @@ export default function Shipping(props) {
                         delay={{ show: 250, hide: 400 }}
                         overlay={addressTooltip}
                     >
-                        <input type="text" style={{ width: '100%' }} value={props.address} onChange={(e) => {props.setAddress(e.target.value)}}></input>
+                        <input type="text" style={{ width: '100%' }} value={props.address} onChange={(e) => { props.setAddress(e.target.value) }}></input>
                     </OverlayTrigger>
                 </div>
             </div>
@@ -57,7 +57,7 @@ export default function Shipping(props) {
                         delay={{ show: 250, hide: 400 }}
                         overlay={postalTooltip}
                     >
-                        <input type="text" style={{ width: '100%' }} value={props.postal} onChange={(e) => {props.setPostal(e.target.value)}}></input>
+                        <input type="text" style={{ width: '100%' }} value={props.postal} onChange={(e) => { props.setPostal(e.target.value) }}></input>
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">
@@ -69,7 +69,7 @@ export default function Shipping(props) {
                         delay={{ show: 250, hide: 400 }}
                         overlay={cityTooltip}
                     >
-                        <input type="text" style={{ width: '100%' }} value={props.city} onChange={(e) => {props.setCity(e.target.value)}}></input>
+                        <input type="text" style={{ width: '100%' }} value={props.city} onChange={(e) => { props.setCity(e.target.value) }}></input>
                     </OverlayTrigger>
                 </div>
             </div>
@@ -83,7 +83,7 @@ export default function Shipping(props) {
                         delay={{ show: 250, hide: 400 }}
                         overlay={provinceTooltip}
                     >
-                        <input type="text" style={{ width: '100%' }} value={props.province} onChange={(e) => {props.setProvince(e.target.value)}}></input>
+                        <input type="text" style={{ width: '100%' }} value={props.province} onChange={(e) => { props.setProvince(e.target.value) }}></input>
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">
@@ -95,7 +95,7 @@ export default function Shipping(props) {
                         delay={{ show: 250, hide: 400 }}
                         overlay={countryTooltip}
                     >
-                        <input type="text" style={{ width: '100%' }} value={props.country} onChange={(e) => {props.setCountry(e.target.value)}}></input>
+                        <input type="text" style={{ width: '100%' }} value={props.country} onChange={(e) => { props.setCountry(e.target.value) }}></input>
                     </OverlayTrigger>
                 </div>
             </div>
