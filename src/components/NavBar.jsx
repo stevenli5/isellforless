@@ -17,7 +17,7 @@ export default function NavBar(props) {
   }
 
   return (
-    <Navbar fixed="top" bg="dark" variant="dark">
+    <Navbar className="pt-5" fixed="top" bg="dark" variant="dark">
       <Container>
         <div className="d-flex">
           <img
@@ -28,7 +28,7 @@ export default function NavBar(props) {
           />{' '}
           <div className="fs-1 fw-bold ms-3" style={{ color: '#B3B3B3' }}><h1>iSellForLess</h1></div>
         </div>
-        <Form className="d-flex w-100 me-5" onSubmit={handleSearch}>
+        <Form className="d-flex w-100" onSubmit={handleSearch}>
           <FormControl
             type="search"
             placeholder="Search"
@@ -38,9 +38,10 @@ export default function NavBar(props) {
           />
           <Button variant="outline-light" onClick={handleSearch}><FontAwesomeIcon className="fs-4" icon={search} /></Button>
         </Form>
-        <Button variant="secondary" className="rounded-circle p-2"><FontAwesomeIcon icon={cart} style={{ cursor: 'pointer' }} onClick={() => setModalShow1(true)} className="fs-2" />
+        <Button variant="secondary" className="rounded-circle p-2 ms-5"><FontAwesomeIcon icon={cart} style={{ cursor: 'pointer' }} onClick={() => setModalShow1(true)} className="fs-2" />
         </Button>
       </Container>
+      <div className="me-3" id="google_translate_element"></div>
       <Checkout
         show={modalShow1}
         onHide={() => setModalShow1(false)}

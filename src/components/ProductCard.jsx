@@ -13,6 +13,14 @@ function ProductInfo(props) {
     setAddPopUp(true);
   }
 
+  useEffect(()=>{
+    if(addPopUp){
+      setTimeout(()=>{
+        setAddPopUp(false);
+      }, 3000);
+    }
+  }, [addPopUp]);
+
   return (
     <Modal
       {...props}

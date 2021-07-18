@@ -36,6 +36,9 @@ export default function Checkout(props) {
       curTotal += Number(item.price);
     });
     setTotal(curTotal);
+    if (curTotal > 0 && stage === 0){
+      setShowErrorMsg(false)
+    }
   });
 
   function handleConfirm() {
@@ -54,7 +57,7 @@ export default function Checkout(props) {
     setCountry("");
     props.handleClear([]);
     props.onHide();
-    alert("Thank you for shopping at iSellForLess!");
+    alert("Thank you for shopping at iSellForLess! Please check your email for your order confirmation.");
     setStage(0);
   }
 
