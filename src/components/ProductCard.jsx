@@ -40,6 +40,7 @@ function ProductInfo(props) {
             </ListGroup>
           </div>
           <div className="row mt-4">
+            <b className="fs-5 mb-2">Reviews:</b>
             <div className="col-8">
               {props.reviews.map((review) => (<div className="mb-2">"{review}"</div>))}
             </div>

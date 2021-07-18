@@ -115,7 +115,7 @@ export default function Sidebar(props) {
                             />
                         </div>
                     </Form>
-                    <div className="mb-3 text-end">
+                    <div className="mb-3">
                         <Button className="p-1" variant="secondary" onClick={() => { window.location.reload() }}>Reset Fields</Button>
                     </div>
                 </div>
