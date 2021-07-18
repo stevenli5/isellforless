@@ -7,19 +7,30 @@ import { faClock as watch } from '@fortawesome/free-regular-svg-icons';
 
 function ProductInfo(props) {
   const [addPopUp, setAddPopUp] = useState(false);
-  function handleClick() {
+  const [removePopUp, setRemovePopUp] = useState(false);
+
+  function handleAdd() {
     let { show, onHide, handleAdd, ...item } = props;
     props.handleAdd(item);
     setAddPopUp(true);
+  }
+
+  function handleRemove(){
+    props.handleRemove(props.id);
+    setRemovePopUp(true);
   }
 
   useEffect(()=>{
     if(addPopUp){
       setTimeout(()=>{
         setAddPopUp(false);
-      }, 3000);
+      }, 2500);
+    } else if(removePopUp){
+      setTimeout(()=>{
+        setRemovePopUp(false);
+      }, 2500);
     }
-  }, [addPopUp]);
+  }, [addPopUp, removePopUp]);
 
   return (
     <Modal
@@ -60,8 +71,9 @@ function ProductInfo(props) {
           </div>
         </div>
         <hr />
-        { addPopUp ? <div className="float-start fw-bold text-success"> Added to cart!</div> : <></>}
-        <Button variant="dark" className="float-end" onClick={handleClick}>Add to Cart</Button>
+        { addPopUp ? <div className="float-start fw-bold text-success"> Added to cart.</div> : <></>}
+        { props.itemInCart(props.id) ? <Button variant="dark" className="float-end bg-danger" onClick={handleRemove}>Remove from Cart</Button> : <Button variant="dark" className="float-end bg-success" onClick={handleAdd}>Add to Cart</Button>}
+        { removePopUp ? <div className="text-end fw-bold text-danger"> Removed from cart. &nbsp;</div> : <></>}
       </Modal.Body>
     </Modal>
   );

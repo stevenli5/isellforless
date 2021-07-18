@@ -19,15 +19,23 @@ function App() {
   const [modalShow, setModalShow] = React.useState(false); // information modal
   const [searchQuery, setSearchQuery] = useState("");
 
+  function itemInCart(id){
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].id === id){
+        return true;
+      } 
+    }
+    return false;
+  }
+
   function handleAdd(item) {
     cart.push(item);
   }
 
   function handleRemove(id) {
-    let tempCart = []
-    let i = 0;
+    let tempCart = [];
     let itemRemoved = false;
-    for (; i < cart.length; i++) {
+    for (let i = 0; i < cart.length; i++) {
       if (cart[i].id === id && !itemRemoved){
         itemRemoved = true;
         continue;
@@ -90,13 +98,12 @@ function App() {
 
 
   return (
-    
     <div className="App">
       <NavBar cart={cart} handleRemove={handleRemove} handleClear={setCart} handleSearch={setSearchQuery} />
       <div className="row">
         <Sidebar sortByPrice={setPriceSortType} sortByRating={setRatingSortType} setCategory={setCategoryType} sortByQuality={setQualitySortType} />
         <div className="col-10 px-4 mt-5 bg-light d-flex flex-wrap" style={{ paddingTop: '4rem' }}>
-          {products.map((item) => (<ProductCard {...item} handleAdd={handleAdd} />))}
+          {products.map((item) => (<ProductCard {...item} handleAdd={handleAdd} handleRemove={handleRemove} itemInCart={itemInCart}/>))}
           <Button variant="secondary" className="shadow rounded-circle me-3 mb-3 p-2" style={{ position: 'fixed', right: '0', bottom: '0' }} onClick={() => setModalShow(true)}><FontAwesomeIcon className="fs-1" icon={info} /></Button>
           <Help
             show={modalShow}

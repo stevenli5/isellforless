@@ -17,7 +17,7 @@ export default function NavBar(props) {
   }
 
   return (
-    <Navbar className="pt-5" fixed="top" bg="dark" variant="dark">
+    <Navbar fixed="top" bg="dark" variant="dark">
       <Container>
         <div className="d-flex">
           <img

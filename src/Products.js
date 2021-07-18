@@ -313,7 +313,7 @@ const allProducts = [
     colour: "Silver",
     description: "An Apple Watch Series 3 at a reasonable price.",
     reviews: ["A bit slow, but it works.", "Works fine."],
-    reviewers: ["Erwin S. from Kitchener", "Levi S. from Guelph"]
+    reviewers: ["Erwin S. from Kitchener", "Levi A. from Guelph"]
   },
   {
     id: "21",

@@ -26,6 +26,7 @@
 - Get last two digits of year: https://stackoverflow.com/questions/17306830/how-to-get-2-digit-year-w-javascript
 - Add shadows on hover to cards https://bootstrapcreative.com/pattern/add-drop-shadow-on-card-hover/
 - Substrings https://ilikekillnerds.com/2020/05/how-to-get-last-4-digits-of-a-credit-card-number-in-javascript/
+- Website translation https://www.w3schools.com/howto/howto_google_translate.asp
 
 ### React
 - Documentation https://reactjs.org/docs/getting-started.html

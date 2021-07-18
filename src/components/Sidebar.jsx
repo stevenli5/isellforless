@@ -5,6 +5,11 @@ import { faStar as unfilled, faClock as watch } from '@fortawesome/free-regular-
 import { faApple as apple } from '@fortawesome/free-brands-svg-icons';
 
 export default function Sidebar(props) {
+
+    function handleReset(){
+        
+    }
+
     return (
         <div className="col-2 sticky-top text-white" style={{ height: '100vh', backgroundColor: '#212529', paddingTop: '5rem' }}>
             <div className="pt-4 px-4 mb-5">
@@ -116,7 +121,7 @@ export default function Sidebar(props) {
                         </div>
                     </Form>
                     <div className="mb-3">
-                        <Button className="p-1" variant="secondary" onClick={() => { window.location.reload() }}>Reset Fields</Button>
+                        <Button className="p-1" variant="secondary" onClick={handleReset}>Reset Fields</Button>
                     </div>
                 </div>
             </div>
