@@ -13,7 +13,7 @@ export default function Payment(props) {
     );
     const numberTooltip = (props) => (
         <Tooltip id="number-tooltip" {...props}>
-            Enter your credit card number. Example: 4520 1203 3304 8888
+            Enter your credit card number. Example: 4520&nbsp;1203&nbsp;3304&nbsp;8888
         </Tooltip>
     );
     const expiryTooltip = (props) => (

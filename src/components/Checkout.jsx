@@ -5,6 +5,8 @@ import Payment from './Payment';
 import Shipping from './Shipping';
 import Cart from './Cart';
 import Final from './Final';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight as arrow } from '@fortawesome/free-solid-svg-icons';
 
 export default function Checkout(props) {
   const [stage, setStage] = useState(0); // stage represents the current "stage" in the checkout process
@@ -64,11 +66,11 @@ export default function Checkout(props) {
       >
         <Modal.Header style={{ backgroundColor: '#E5E5E5' }} closeButton>
           <Modal.Title>
-            {stage === 0 ? <div><span className="fw-bold text-success">Cart</span> &gt; Information &gt; Payment &gt; Shipping &gt; Summary</div> :
-              stage === 1 ? <div><span className="fw-bold text-success">Cart &gt; Information</span> &gt; Payment &gt; Shipping &gt; Summary</div> : 
-                stage === 2 ? <div><span className="fw-bold text-success">Cart &gt; Information &gt; Payment</span> &gt; Shipping &gt; Summary</div> :
-                  stage === 3 ? <div><span className="fw-bold text-success">Cart &gt; Information &gt; Payment &gt; Shipping</span> &gt; Summary</div> : 
-                    <div><span className="fw-bold text-success">Cart &gt; Information &gt; Payment &gt; Shipping &gt; Summary</span></div>}
+            {stage === 0 ? <div><span className="fw-bold text-success">Cart</span> <FontAwesomeIcon className="mx-1" icon={arrow} /> Information <FontAwesomeIcon className="mx-1" icon={arrow} /> Payment <FontAwesomeIcon className="mx-1" icon={arrow} /> Shipping <FontAwesomeIcon className="mx-1" icon={arrow} /> Summary</div> :
+              stage === 1 ? <div><span className="fw-bold text-success">Cart <FontAwesomeIcon className="mx-1" icon={arrow} /> Information</span> <FontAwesomeIcon className="mx-1" icon={arrow} /> Payment <FontAwesomeIcon className="mx-1" icon={arrow} /> Shipping <FontAwesomeIcon className="mx-1" icon={arrow} /> Summary</div> : 
+                stage === 2 ? <div><span className="fw-bold text-success">Cart <FontAwesomeIcon className="mx-1" icon={arrow} /> Information <FontAwesomeIcon className="mx-1" icon={arrow} /> Payment</span> <FontAwesomeIcon className="mx-1" icon={arrow} /> Shipping <FontAwesomeIcon className="mx-1" icon={arrow} /> Summary</div> :
+                  stage === 3 ? <div><span className="fw-bold text-success">Cart <FontAwesomeIcon className="mx-1" icon={arrow} /> Information <FontAwesomeIcon className="mx-1" icon={arrow} /> Payment <FontAwesomeIcon className="mx-1" icon={arrow} /> Shipping</span> <FontAwesomeIcon className="mx-1" icon={arrow} /> Summary</div> : 
+                    <div><span className="fw-bold text-success">Cart <FontAwesomeIcon className="mx-1" icon={arrow} /> Information <FontAwesomeIcon className="mx-1" icon={arrow} /> Payment <FontAwesomeIcon className="mx-1" icon={arrow} /> Shipping <FontAwesomeIcon className="mx-1" icon={arrow} /> Summary</span></div>}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body style={{ backgroundColor: '#CCCCCC' }}>
