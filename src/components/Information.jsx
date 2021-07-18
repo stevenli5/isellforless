@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faIdCard as card } from '@fortawesome/free-solid-svg-icons';
 import $ from 'jquery';
 
-export default function Information() {
+export default function Information(props) {
 
     const firstNameTooltip = (props) => (
         <Tooltip id="firstName-tooltip" {...props}>
@@ -66,7 +66,7 @@ export default function Information() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={firstNameTooltip}
                     >
-                        <input type="fname" style={{ width: '100%' }}></input>
+                        <input type="fname" style={{ width: '100%' }} value={props.firstName} onChange={(e) => {props.setFirstName(e.target.value)}}></input>
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">
@@ -78,7 +78,7 @@ export default function Information() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={lastNameTooltip}
                     >
-                        <input type="lname" style={{ width: '100%' }}></input>
+                        <input type="lname" style={{ width: '100%' }} value={props.lastName} onChange={(e) => {props.setLastName(e.target.value)}}></input>
                     </OverlayTrigger>
                 </div>
             </div>
@@ -92,7 +92,7 @@ export default function Information() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={emailTooltip}
                     >
-                        <input type="email" style={{ width: '100%' }}></input>
+                        <input type="email" style={{ width: '100%' }} value={props.email} onChange={(e) => {props.setEmail(e.target.value)}}></input>
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">
@@ -104,7 +104,7 @@ export default function Information() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={phoneNumberTooltip}
                     >
-                        <input type="tel" maxLength="14" style={{ width: '100%' }}></input>
+                        <input type="tel" maxLength="14" style={{ width: '100%' }} value={props.phoneNum} onChange={(e) => {props.setPhoneNum(e.target.value)}}></input>
                     </OverlayTrigger>
                 </div>
             </div>

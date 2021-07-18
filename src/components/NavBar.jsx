@@ -11,9 +11,25 @@ import Cart from './Cart';
 
 function CartAndCheckout(props) {
   const [stage, setStage] = useState(0); //stage represents the current "stage" in the checkout process
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phoneNum, setPhoneNum] = useState("");
+  const [email, setEmail] = useState("");
+  const [cardName, setCardName] = useState("");
+  const [cardNum, setCardNum] = useState("");
+  const [cardDate, setCardDate] = useState("");
+  const [cardCVV, setCardCVV] = useState("");
+  /*const [, set] = useState("");
+  const [, set] = useState("");
+  const [, set] = useState("");
+  const [, set] = useState("");
+  const [, set] = useState("");*/
+
+  let infoObj = {firstName, setFirstName, lastName, setLastName, phoneNum, setPhoneNum, email, setEmail};
+  let payObj = {cardName, setCardName, cardNum, setCardNum, cardDate, setCardDate, cardCVV, setCardCVV};
+  //let shipObj = {};
 
   return (
-
     <>
       <Modal
         {...props}
@@ -21,10 +37,10 @@ function CartAndCheckout(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        <Modal.Header closeButton>
+        <Modal.Header style={{backgroundColor: '#E5E5E5'}} closeButton>
         </Modal.Header>
-        <Modal.Body>
-          {stage === 0 ? <Cart cart={props.cart} handleRemove={props.handleRemove} handleClear={props.handleClear} /> : stage === 1 ? <Information /> : stage === 2 ? <Payment /> : stage === 3 ? <Shipping /> : <></>/*<Final />*/}
+        <Modal.Body style={{backgroundColor: '#CCCCCC'}}>
+          {stage === 0 ? <Cart cart={props.cart} handleRemove={props.handleRemove} handleClear={props.handleClear} /> : stage === 1 ? <Information {...infoObj}/> : stage === 2 ? <Payment {...payObj}/> : stage === 3 ? <Shipping /> : <></>/*<Final />*/}
 
           <hr />
           {stage !== 0 ? <Button variant="dark" className="float-start" onClick={() => setStage(stage - 1)}>Back</Button> : <></>}
@@ -35,14 +51,14 @@ function CartAndCheckout(props) {
   );
 }
 
-
 export default function NavBar(props) {
 
   const [modalShow1, setModalShow1] = React.useState(false);
 
   let searchInput = null;
 
-  function handleSearch(){
+  function handleSearch(event){
+    event.preventDefault();
     props.handleSearch(searchInput.value);
   }
 
@@ -58,7 +74,7 @@ export default function NavBar(props) {
           />{' '}
           <div className="fs-1 fw-bold ms-3" style={{ color: '#B3B3B3' }}><h1>iSellForLess</h1></div>
         </div>
-        <Form className="d-flex w-100 me-5">
+        <Form className="d-flex w-100 me-5" onSubmit={handleSearch}>
           <FormControl
             type="search"
             placeholder="Search"

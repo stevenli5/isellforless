@@ -38,7 +38,9 @@ function App() {
 
     //search
     if(searchQuery !==""){
-      sortedProducts = sortedProducts.filter((prod) => prod.name.toLowerCase().includes(searchQuery.toLowerCase()));
+      sortedProducts = sortedProducts.filter((prod) => {
+        return prod.name.toLowerCase().includes(searchQuery.toLowerCase()) || prod.colour.toLowerCase().includes(searchQuery.toLowerCase()) || prod.quality.toLowerCase().includes(searchQuery.toLowerCase());
+      });
     }
 
     //sort price
@@ -66,12 +68,8 @@ function App() {
       sortedProducts = sortedProducts.filter((prod) => prod.category === "iPad");
     } else if (categoryType === "MacBook") {
       sortedProducts = sortedProducts.filter((prod) => prod.category === "MacBook");
-    } else if (categoryType === "Case") {
-      sortedProducts = sortedProducts.filter((prod) => prod.category === "Case");
-    } else if (categoryType === "Charger") {
-      sortedProducts = sortedProducts.filter((prod) => prod.category === "Charger");
-    } else if (categoryType === "Accessory") {
-      sortedProducts = sortedProducts.filter((prod) => prod.category === "Accessory");
+    } else if (categoryType === "Apple Watches") {
+      sortedProducts = sortedProducts.filter((prod) => prod.category === "Apple Watch");
     }
 
     //sort quality
@@ -93,7 +91,7 @@ function App() {
       <div className="row">
         <Sidebar sortByPrice={setPriceSortType} sortByRating={setRatingSortType} setCategory={setCategoryType} sortByQuality={setQualitySortType} />
         <div className="col-10 px-4 mt-5 bg-light d-flex flex-wrap" style={{ paddingTop: '4rem' }}>
-          {products.map((item) => (<ProductCard {...item} handleAdd={handleAdd} />))}
+          {products.map((item) => (<ProductCard {...item} handleAdd={handleAdd}/>))}
           <Button variant="secondary" className="shadow rounded-circle me-3 mb-3 p-2" style={{ position: 'fixed', right: '0', bottom: '0' }} onClick={() => setModalShow(true)}><FontAwesomeIcon className="fs-1" icon={question} /></Button>
           <Help
             show={modalShow}

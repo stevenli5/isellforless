@@ -1,5 +1,6 @@
 import { Card, ListGroup, ListGroupItem, Modal, Button } from "react-bootstrap";
-import React from 'react';
+import React, {useEffect} from 'react';
+import $ from 'jquery';
 
 function ProductInfo(props) {
   function handleClick() {
@@ -48,9 +49,22 @@ function ProductInfo(props) {
 export default function ProductCard(props) {
 
   const [modalShow, setModalShow] = React.useState(false);
+
+  useEffect(()=>{
+    $(document).ready(function() {
+          $( ".card" ).hover(
+          function() {
+            $(this).addClass('shadow-lg').css('cursor', 'pointer'); 
+          }, function() {
+            $(this).removeClass('shadow-lg');
+          }
+        );
+     });
+  })
+
   return (
     <>
-      <Card className="shadow-lg mx-5 mb-5" style={{ width: '18rem', cursor: 'pointer'}} onClick={() => setModalShow(true)}>
+      <Card className="shadow mx-5 mb-5 card" style={{ width: '18rem', cursor: 'pointer'}} onClick={() => setModalShow(true)}>
         <Card.Img variant="top" src={props.image} style={{ width: '100%' }} />
 
         <Card.Body>

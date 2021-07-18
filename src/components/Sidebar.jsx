@@ -6,7 +6,7 @@ import { faStar as unfilled } from '@fortawesome/free-regular-svg-icons';
 export default function Sidebar(props) {
     return (
         <div className="col-2 sticky-top text-white" style={{ height: '100vh', backgroundColor: '#212529', paddingTop: '5rem' }}>
-            <div className="pt-4 px-4 mb-4">
+            <div className="pt-5 px-4 mb-5">
                 <h2 class="fs-3"><FontAwesomeIcon icon={hamburger} /> Categories</h2>
                 <div className="py-2">
                     <div className="d-grid gap-2">
@@ -22,14 +22,8 @@ export default function Sidebar(props) {
                         <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("MacBook")}}>
                             MacBooks
                         </Button>
-                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("Case")}}>
-                            Cases
-                        </Button>
-                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("Charger")}}>
-                            Chargers
-                        </Button>
-                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("Accessory")}}>
-                            Accessories
+                        <Button className="rounded-pill p-0 fs-5" variant="light" onClick={()=>{props.setCategory("Apple Watch")}}>
+                            Apple Watches
                         </Button>
                     </div>
                 </div>

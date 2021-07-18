@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCreditCard as ccard } from '@fortawesome/free-solid-svg-icons';
 import $ from 'jquery';
 
-export default function Payment() {
+export default function Payment(props) {
 
     const nameTooltip = (props) => (
         <Tooltip id="name-tooltip" {...props}>
@@ -115,7 +115,7 @@ export default function Payment() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={nameTooltip}
                     >
-                        <input type="text" style={{ width: '100%' }}></input>
+                        <input type="text" style={{ width: '100%' }} value={props.cardName} onChange={(e) => {props.setCardName(e.target.value)}}></input>
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">
@@ -127,7 +127,7 @@ export default function Payment() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={numberTooltip}
                     >
-                        <input type="text" id="ccNumber" maxLength="19" style={{ width: '100%' }}></input>
+                        <input type="text" id="ccNumber" maxLength="19" style={{ width: '100%' }} value={props.cardNum} onChange={(e) => {props.setCardNum(e.target.value)}}></input>
                     </OverlayTrigger>
                 </div>
             </div>
@@ -141,7 +141,7 @@ export default function Payment() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={expiryTooltip}
                     >
-                        <input type="text" id="ccExpiry" maxLength="5" style={{ width: '100%' }}></input>
+                        <input type="text" id="ccExpiry" maxLength="5" style={{ width: '100%' }} value={props.cardDate} onChange={(e) => {props.setCardDate(e.target.value)}}></input>
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">
@@ -153,7 +153,7 @@ export default function Payment() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={cvvTooltip}
                     >
-                        <input type="text" id="ccCVV" maxLength="3" style={{ width: '100%' }}></input>
+                        <input type="text" id="ccCVV" maxLength="3" style={{ width: '100%' }} value={props.cardCVV} onChange={(e) => {props.setCardCVV(e.target.value)}}></input>
                     </OverlayTrigger>
                 </div>
             </div>
