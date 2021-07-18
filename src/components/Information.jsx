@@ -58,7 +58,7 @@ export default function Information(props) {
             <h1 className="text-center mb-4"><FontAwesomeIcon icon={card} /> Your Information <FontAwesomeIcon className="align-middle fs-4 text-primary" title="Your contact information is needed in case we need to contact you about your order." icon={question} /></h1>
             <div className="row my-1">
                 <div className="col-2">
-                    <label className="fw-bold">First&nbsp;Name</label>
+                    <label className="fw-bold required">First&nbsp;Name</label>
                 </div>
                 <div className="col-4">
                     <OverlayTrigger
@@ -70,7 +70,7 @@ export default function Information(props) {
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">
-                    <label className="fw-bold">Last&nbsp;Name</label>
+                    <label className="fw-bold required">Last&nbsp;Name</label>
                 </div>
                 <div className="col-4">
                     <OverlayTrigger
@@ -84,7 +84,7 @@ export default function Information(props) {
             </div>
             <div className="row my-1">
                 <div className="col-2">
-                    <label className="fw-bold">Email&nbsp;Address</label>
+                    <label className="fw-bold required">Email&nbsp;Address</label>
                 </div>
                 <div className="col-4">
                     <OverlayTrigger

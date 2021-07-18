@@ -107,7 +107,7 @@ export default function Payment(props) {
             <h1 className="text-center mb-4"><FontAwesomeIcon icon={ccard} /> Payment Information</h1>
             <div className="row my-1">
                 <div className="col-2">
-                    <label className="fw-bold">Name on Card</label>
+                    <label className="fw-bold required">Name&nbsp;on&nbsp;Card</label>
                 </div>
                 <div className="col-4">
                     <OverlayTrigger
@@ -119,7 +119,7 @@ export default function Payment(props) {
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">
-                    <label className="fw-bold">Card&nbsp;Number</label>
+                    <label className="fw-bold required">Card&nbsp;Number</label>
                 </div>
                 <div className="col-4">
                     <OverlayTrigger
@@ -133,7 +133,7 @@ export default function Payment(props) {
             </div>
             <div className="row my-1">
                 <div className="col-2">
-                    <label className="fw-bold">Expiry Date</label>
+                    <label className="fw-bold required">Expiry Date</label>
                 </div>
                 <div className="col-4">
                     <OverlayTrigger
@@ -145,7 +145,7 @@ export default function Payment(props) {
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">
-                    <label className="fw-bold">CVV</label>
+                    <label className="fw-bold required">CVV</label>
                 </div>
                 <div className="col-4">
                     <OverlayTrigger

@@ -35,7 +35,7 @@ export default function Shipping(props) {
             <h1 className="text-center mb-4"><FontAwesomeIcon icon={truck} /> Shipping Information</h1>
             <div className="row my-1">
                 <div className="col-2">
-                    <label className="fw-bold">Address</label>
+                    <label className="fw-bold required">Address</label>
                 </div>
                 <div className="col-10">
                     <OverlayTrigger
@@ -49,7 +49,7 @@ export default function Shipping(props) {
             </div>
             <div className="row my-1">
                 <div className="col-2">
-                    <label className="fw-bold">Postal&nbsp;Code</label>
+                    <label className="fw-bold required">Postal&nbsp;Code</label>
                 </div>
                 <div className="col-4">
                     <OverlayTrigger
@@ -61,7 +61,7 @@ export default function Shipping(props) {
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">
-                    <label className="fw-bold">City/Town</label>
+                    <label className="fw-bold required">City/Town</label>
                 </div>
                 <div className="col-4">
                     <OverlayTrigger
@@ -75,7 +75,7 @@ export default function Shipping(props) {
             </div>
             <div className="row my-1">
                 <div className="col-2">
-                    <label className="fw-bold">Province</label>
+                    <label className="fw-bold required">Province</label>
                 </div>
                 <div className="col-4">
                     <OverlayTrigger
@@ -87,7 +87,7 @@ export default function Shipping(props) {
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">
-                    <label className="fw-bold">Country</label>
+                    <label className="fw-bold required">Country</label>
                 </div>
                 <div className="col-4">
                     <OverlayTrigger

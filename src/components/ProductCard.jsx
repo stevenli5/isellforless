@@ -1,6 +1,9 @@
 import { Card, ListGroup, ListGroupItem, Modal, Button } from "react-bootstrap";
 import React, {useEffect} from 'react';
 import $ from 'jquery';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMobileAlt as phone, faTabletAlt as tablet, faLaptop as laptop } from '@fortawesome/free-solid-svg-icons';
+import { faClock as watch } from '@fortawesome/free-regular-svg-icons';
 
 function ProductInfo(props) {
   function handleClick() {
@@ -65,11 +68,12 @@ export default function ProductCard(props) {
 
   return (
     <>
-      <Card className="shadow mx-5 mb-5 card" style={{ width: '18rem', cursor: 'pointer'}} onClick={() => setModalShow(true)}>
+      <Card className="shadow mx-5 mb-5 card" style={{ width: '18rem', cursor: 'pointer', height: '34rem'}} onClick={() => setModalShow(true)}>
         <Card.Img variant="top" src={props.image} style={{ width: '100%' }} />
 
         <Card.Body>
-          <Card.Title>{props.name}</Card.Title>
+          <Card.Title>{props.category === "iPhone" ? <FontAwesomeIcon className="me-2" icon={phone} /> : props.category === "iPad" ? <FontAwesomeIcon className="me-2" icon={tablet} /> : props.category === "MacBook" ? <FontAwesomeIcon className="me-2" icon={laptop} /> : <FontAwesomeIcon className="me-2" icon={watch} />} 
+            {props.name}</Card.Title>
           <ListGroup className="list-group-flush">
             <ListGroupItem><b>Price:</b> ${props.price}</ListGroupItem>
             <ListGroupItem><b>Rating:</b> {props.rating}/5</ListGroupItem>

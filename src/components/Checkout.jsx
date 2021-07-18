@@ -5,7 +5,7 @@ import Payment from './Payment';
 import Shipping from './Shipping';
 import Cart from './Cart';
 import Final from './Final';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight as arrow } from '@fortawesome/free-solid-svg-icons';
 
 export default function Checkout(props) {
@@ -24,6 +24,7 @@ export default function Checkout(props) {
   const [province, setProvince] = useState("");
   const [country, setCountry] = useState("");
   const [total, setTotal] = useState(0);
+  const [showErrorMsg, setShowErrorMsg] = useState(false);
 
   let infoObj = { firstName, setFirstName, lastName, setLastName, phoneNum, setPhoneNum, email, setEmail };
   let payObj = { cardName, setCardName, cardNum, setCardNum, cardDate, setCardDate, cardCVV, setCardCVV };
@@ -56,6 +57,26 @@ export default function Checkout(props) {
     alert("Thank you for shopping at iSellForLess!");
   }
 
+  function handleNext(){
+    if(stage===1 && (firstName==="" || lastName==="" || email==="")){
+      setShowErrorMsg(true);
+      return;
+    } else if(stage===2 && (cardName==="" || cardNum==="" || cardDate==="" || cardCVV==="")){
+      setShowErrorMsg(true);
+      return;
+    } else if(stage===3 && (address==="" || postal==="" || city==="" || province==="" || country==="")){
+      setShowErrorMsg(true);
+      return;
+    }
+    setShowErrorMsg(false);
+    setStage(stage + 1);
+  }
+
+  function handleBack(){
+    setShowErrorMsg(false);
+    setStage(stage - 1);
+  }
+
   return (
     <>
       <Modal
@@ -75,10 +96,10 @@ export default function Checkout(props) {
         </Modal.Header>
         <Modal.Body style={{ backgroundColor: '#CCCCCC' }}>
           {stage === 0 ? <Cart cart={props.cart} total={total} handleRemove={props.handleRemove} handleClear={props.handleClear} /> : stage === 1 ? <Information {...infoObj} /> : stage === 2 ? <Payment {...payObj} /> : stage === 3 ? <Shipping {...shipObj} /> : <Final {...infoObj} {...payObj} {...shipObj} total={total} />}
-
+          {showErrorMsg ? <span className="fw-bold text-danger">All fields marked with a * must be filled in.</span> : <></>}
           <hr />
-          {stage !== 0 ? <Button variant="dark" className="float-start" onClick={() => setStage(stage - 1)}>Back</Button> : <></>}
-          {stage !== 4 ? <Button variant="dark" className="float-end" onClick={() => setStage(stage + 1)}>Next</Button> : <Button variant="success" className="float-end" onClick={handleConfirm}>Confirm Order</Button>}
+          {stage !== 0 ? <Button variant="dark" className="float-start" onClick={handleBack}>Back</Button> : <></>}
+          {stage !== 4 ? <Button variant="dark" className="float-end" onClick={handleNext}>Next</Button> : <Button variant="success" className="float-end" onClick={handleConfirm}>Confirm Order</Button>}
         </Modal.Body>
       </Modal>
     </>
