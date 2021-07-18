@@ -29,7 +29,7 @@
 
 ### React
 - Documentation https://reactjs.org/docs/getting-started.html
-- Force refresh https://stackoverflow.com/questions/46240647/react-how-to-force-a-function-component-to-render
+- Effect hook https://reactjs.org/docs/hooks-effect.html
 - States https://reactjs.org/docs/state-and-lifecycle.html
 - componentDidMount in functional components with hooks https://medium.com/@timtan93/states-and-componentdidmount-in-functional-components-with-hooks-cac5484d22ad
 - Use jQuery with React https://stackoverflow.com/questions/38518278/how-to-use-jquery-with-reactjs

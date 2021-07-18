@@ -24,13 +24,17 @@ function App() {
   }
 
   function handleRemove(id) {
+    let tempCart = []
     let i = 0;
+    let itemRemoved = false;
     for (; i < cart.length; i++) {
-      if (cart[i].id === id) {
-        break;
-      }
+      if (cart[i].id === id && !itemRemoved){
+        itemRemoved = true;
+        continue;
+      } 
+      tempCart.push(cart[i]);
     }
-    cart.pop(i);
+    setCart(tempCart);
   }
 
   useEffect(() => {
@@ -86,6 +90,7 @@ function App() {
 
 
   return (
+    
     <div className="App">
       <NavBar cart={cart} handleRemove={handleRemove} handleClear={setCart} handleSearch={setSearchQuery} />
       <div className="row">
@@ -102,6 +107,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;

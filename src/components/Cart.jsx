@@ -4,13 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBasket as basket, faTimesCircle as remove } from '@fortawesome/free-solid-svg-icons';
 
 export default function Cart(props) {
-    const [, updateState] = React.useState();
-    const forceUpdate = React.useCallback(() => updateState({}), []);
-
-    function handleRemove(item) {
-        props.handleRemove(item.id);
-        forceUpdate();
-    }
 
     return (
         <>
@@ -22,7 +15,7 @@ export default function Cart(props) {
                         <div className="col-6 fs-5"><b>{item.name}</b><br />{item.quality}<br />{item.colour}</div>
                         <div className="col-3 text-end"><img src={item.image} alt={item.name} style={{ width: '60%' }}></img></div>
                         <div className="col-2 text-end fs-5">${item.price}</div>
-                        <div className="col-1 d-flex"><Button variant="danger" className="my-auto p-2 text-middle" onClick={() => { handleRemove(item) }}><FontAwesomeIcon className="fs-3" icon={remove} /></Button></div>
+                        <div className="col-1 d-flex"><Button variant="danger" className="my-auto p-2 text-middle" onClick={() => { props.handleRemove(item.id) }}><FontAwesomeIcon className="fs-3" icon={remove} /></Button></div>
                     </div>)
                 )}
             </div>

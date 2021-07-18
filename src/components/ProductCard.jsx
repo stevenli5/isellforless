@@ -1,14 +1,16 @@
 import { Card, ListGroup, ListGroupItem, Modal, Button } from "react-bootstrap";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import $ from 'jquery';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt as phone, faTabletAlt as tablet, faLaptop as laptop } from '@fortawesome/free-solid-svg-icons';
 import { faClock as watch } from '@fortawesome/free-regular-svg-icons';
 
 function ProductInfo(props) {
+  const [addPopUp, setAddPopUp] = useState(false);
   function handleClick() {
     let { show, onHide, handleAdd, ...item } = props;
     props.handleAdd(item);
+    setAddPopUp(true);
   }
 
   return (
@@ -49,10 +51,10 @@ function ProductInfo(props) {
             </div>
           </div>
         </div>
+        <hr />
+        { addPopUp ? <div className="float-start fw-bold text-success"> Added to cart!</div> : <></>}
+        <Button variant="dark" className="float-end" onClick={handleClick}>Add to Cart</Button>
       </Modal.Body>
-      <Modal.Footer className="bg-light">
-        <Button variant="dark" onClick={handleClick}>Add to Cart</Button>
-      </Modal.Footer>
     </Modal>
   );
 }

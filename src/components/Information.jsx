@@ -92,7 +92,7 @@ export default function Information(props) {
                         delay={{ show: 250, hide: 400 }}
                         overlay={emailTooltip}
                     >
-                        <input type="email" style={{ width: '100%' }} value={props.email} onChange={(e) => { props.setEmail(e.target.value) }}></input>
+                        <input type="text" style={{ width: '100%' }} value={props.email} onChange={(e) => { props.setEmail(e.target.value) }}></input>
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">
