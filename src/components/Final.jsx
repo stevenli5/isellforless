@@ -1,49 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingBasket as basket, faTimesCircle as remove } from '@fortawesome/free-solid-svg-icons';
+import { faListAlt as checklist, faIdCard as card, faCreditCard as ccard, faShippingFast as truck, faTags as price } from '@fortawesome/free-solid-svg-icons';
 
-/*export default function Final(props) {
-    const [total, setTotal] = useState(0);
+export default function Final(props) {
 
     return (
         <>
-            <h1 className="text-center mb-4"><FontAwesomeIcon icon={basket} /> Cart</h1>
-            <div className="row mb-3 fs-5">
-                <div className="col-7 fw-bold"><u>Product(s)</u></div>
-                <div className="col-4 align-bottom text-end fw-bold"><u>Price</u></div>
-            </div>
-            <Button variant="danger" className="my-auto p-2 text-middle" onClick={() => { props.handleClear([]) }}>Clear Cart</Button>
-            <div>
-                {props.cart.map(item =>
-                (
-                    <div className="row mb-3">
-                        <div className="col-4"><b>{item.name}</b><br />{item.quality}<br />{item.colour}</div>
-                        <div className="col-3 text-end"><img src={item.image} style={{ height: '7rem', width: '60%' }}></img></div>
-                        <div className="col-4 align-bottom text-end">${item.price}</div>
-                        <div className="col-1 d-flex"><Button variant="danger" className="my-auto p-2 text-middle" onClick={() => { handleRemove(item) }}><FontAwesomeIcon className="fs-3" icon={remove} /></Button></div>
-                    </div>)
-                )}
-            </div>
-            <div className="fs-5 text-end">
-                <div className="row">
-                    <div className="col-12">
-                        <b>Subtotal:</b> ${total.toFixed(2)}
-                    </div>
+            <h1 className="text-center mb-4 fs-2"><FontAwesomeIcon icon={checklist} /> Summary</h1>
+            <div className="row">
+                <div className="col-6 mb-3">
+                    <h2 className="fs-3"><FontAwesomeIcon icon={card} /> Your Information</h2>
+                    <div className="ms-1"><b>First Name:</b> {props.firstName}</div>
+                    <div className="ms-1"><b>Last Name:</b> {props.lastName}</div>
+                    <div className="ms-1"><b>Email Address:</b> {props.email}</div>
+                    <div className="ms-1"><b>Phone Number:</b> {props.phoneNum}</div>
                 </div>
-                <div className="row">
-                    <div className="col-8"></div>
-                    <div className="col-4 text-end">
-                        <b>Tax:</b> ${(total * 0.13).toFixed(2)}
-                        <hr />
-                    </div>
+                <div className="col-6 mb-3">
+                    <h2 className="fs-3"><FontAwesomeIcon icon={ccard} /> Payment Information</h2>
+                    <div className="ms-1">You are paying with your card ending in <b>{props.cardNum.substr(-4)}</b></div>
+                    <div className="ms-1">with an expiry of <b>{props.cardDate}</b></div>
                 </div>
-                <div className="row">
-                    <div className="col-12">
-                        <b>Total:</b> ${(total * 1.13).toFixed(2)}
-                    </div>
+            </div>
+            <div className="row">
+                <div className="col-6 mb-3">
+                    <h2 className="fs-3"><FontAwesomeIcon icon={truck} /> Shipping Information</h2>
+                    <div className="ms-1"><b>Shipping Address:</b> {props.address}</div>
+                    <div className="ms-1"><b>Postal Code:</b> {props.zip}</div>
+                    <div className="ms-1"><b>City/Town:</b> {props.city}</div>
+                    <div className="ms-1"><b>Province:</b> {props.province}</div>
+                    <div className="ms-1"><b>Country:</b> {props.country}</div>
+                </div>
+                <div className="col-6 mb-3">
+                    <h2 className="fs-3"><FontAwesomeIcon icon={price} /> Order Total</h2>
+                    <div className="ms-1"><b>Subtotal:</b> {props.total.toFixed(2)}</div>
+                    <div className="ms-1"><b>Tax:</b> {(props.total * 0.13).toFixed(2)}</div>
+                    <div className="ms-1"><b>Total:</b> {(props.total * 1.13).toFixed(2)}</div>
                 </div>
             </div>
         </>
     );
-}*/
+}

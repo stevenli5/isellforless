@@ -12,8 +12,6 @@
 - React Bootstrap
 
 ## Sources
-### HTML
-
 ### CSS/Bootstrap
 - Navbar and search bar https://react-bootstrap.github.io/components/navbar/
 - Radio buttons https://react-bootstrap.netlify.app/components/forms/#forms-check-stacked
@@ -27,8 +25,10 @@
 - Validating regex: https://www.w3schools.com/jsref/jsref_regexp_test.asp
 - Get last two digits of year: https://stackoverflow.com/questions/17306830/how-to-get-2-digit-year-w-javascript
 - Add shadows on hover to cards https://bootstrapcreative.com/pattern/add-drop-shadow-on-card-hover/
+- Substrings https://ilikekillnerds.com/2020/05/how-to-get-last-4-digits-of-a-credit-card-number-in-javascript/
 
 ### React
+- Documentation https://reactjs.org/docs/getting-started.html
 - Force refresh https://stackoverflow.com/questions/46240647/react-how-to-force-a-function-component-to-render
 - States https://reactjs.org/docs/state-and-lifecycle.html
 - componentDidMount in functional components with hooks https://medium.com/@timtan93/states-and-componentdidmount-in-functional-components-with-hooks-cac5484d22ad

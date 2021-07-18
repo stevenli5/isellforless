@@ -19,7 +19,7 @@ export default function Help(props) {
         <Modal.Body>
           <h2 className="fs-5"><FontAwesomeIcon icon={about} /> About Us</h2>
           <p>
-            Founded in April 2020 and based in Ottawa, Ontario, Canada. Our mission is to provide contactless delivery of low-cost Apple products for our clients in North America.
+            Founded in April 2020 and based in Ottawa, Ontario, Canada. Our mission is to provide contactless delivery of low-cost Apple products for our clients in Ontario.
           </p>
           <h2 className="fs-5"><FontAwesomeIcon icon={contact} /> Contact Us</h2>
           <p>For inquiries, feel free to email us at <a href="mailto:contact@isellforless.ca">contact@isellforless.ca</a> (1-3 business days) or call us at (613) 314-2020.</p>
@@ -27,17 +27,17 @@ export default function Help(props) {
             <div className="col-6 text-center"><h2 className="fs-5 mb-4"><FontAwesomeIcon icon={hours} /> Operating Hours</h2>
               <p><span class="fw-bold">Sunday:</span> Closed
                 <br />
-                <span class="fw-bold">Monday:</span> 8:00&nbsp;AM&nbsp;-&nbsp;8:00&nbsp;PM
+                <span class="fw-bold">Monday:</span> 8:00&nbsp;AM&nbsp;-&nbsp;6:00&nbsp;PM
                 <br />
-                <span class="fw-bold">Tuesday:</span> 8:00&nbsp;AM&nbsp;-&nbsp;8:00&nbsp;PM
+                <span class="fw-bold">Tuesday:</span> 8:00&nbsp;AM&nbsp;-&nbsp;6:00&nbsp;PM
                 <br />
-                <span class="fw-bold">Wednesday:</span> 8:00&nbsp;AM&nbsp;-&nbsp;9:00&nbsp;PM
+                <span class="fw-bold">Wednesday:</span> 8:00&nbsp;AM&nbsp;-&nbsp;5:00&nbsp;PM
                 <br />
-                <span class="fw-bold">Thursday:</span> 7:00&nbsp;AM&nbsp;-&nbsp;7:00&nbsp;PM
+                <span class="fw-bold">Thursday:</span> 7:00&nbsp;AM&nbsp;-&nbsp;6:00&nbsp;PM
                 <br />
-                <span class="fw-bold">Friday:</span> 10:00&nbsp;AM&nbsp;-&nbsp;5:00&nbsp;PM
+                <span class="fw-bold">Friday:</span> 9:00&nbsp;AM&nbsp;-&nbsp;3:00&nbsp;PM
                 <br />
-                <span class="fw-bold">Saturday:</span> 10:00AM&nbsp;AM&nbsp;-&nbsp;5:00&nbsp;PM
+                <span class="fw-bold">Saturday:</span> 10:00&nbsp;AM&nbsp;-&nbsp;3:00&nbsp;PM
               </p>
               <p>Closed on holidays.</p>
             </div>

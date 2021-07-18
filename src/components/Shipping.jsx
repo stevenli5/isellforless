@@ -2,7 +2,7 @@ import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShippingFast as truck } from '@fortawesome/free-solid-svg-icons';
 
-export default function Shipping() {
+export default function Shipping(props) {
 
     const addressTooltip = (props) => (
         <Tooltip id="name-tooltip" {...props}>
@@ -11,7 +11,7 @@ export default function Shipping() {
     );
     const postalTooltip = (props) => (
         <Tooltip id="number-tooltip" {...props}>
-            Enter shipping postal code/ZIP code.
+            Enter your shipping postal code.
         </Tooltip>
     );
     const cityTooltip = (props) => (
@@ -21,7 +21,7 @@ export default function Shipping() {
     );
     const provinceTooltip = (props) => (
         <Tooltip id="cvv-tooltip" {...props}>
-            Enter your shipping province/state.
+            Enter your shipping province.
         </Tooltip>
     );
     const countryTooltip = (props) => (
@@ -43,13 +43,13 @@ export default function Shipping() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={addressTooltip}
                     >
-                        <input type="text" style={{ width: '100%' }}></input>
+                        <input type="text" style={{ width: '100%' }} value={props.address} onChange={(e) => {props.setAddress(e.target.value)}}></input>
                     </OverlayTrigger>
                 </div>
             </div>
             <div className="row my-1">
                 <div className="col-2">
-                    <label className="fw-bold">Postal/ZIP&nbsp;Code</label>
+                    <label className="fw-bold">Postal&nbsp;Code</label>
                 </div>
                 <div className="col-4">
                     <OverlayTrigger
@@ -57,7 +57,7 @@ export default function Shipping() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={postalTooltip}
                     >
-                        <input type="text" style={{ width: '100%' }}></input>
+                        <input type="text" style={{ width: '100%' }} value={props.zip} onChange={(e) => {props.setZip(e.target.value)}}></input>
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">
@@ -69,13 +69,13 @@ export default function Shipping() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={cityTooltip}
                     >
-                        <input type="text" style={{ width: '100%' }}></input>
+                        <input type="text" style={{ width: '100%' }} value={props.city} onChange={(e) => {props.setCity(e.target.value)}}></input>
                     </OverlayTrigger>
                 </div>
             </div>
             <div className="row my-1">
                 <div className="col-2">
-                    <label className="fw-bold">Province/State</label>
+                    <label className="fw-bold">Province</label>
                 </div>
                 <div className="col-4">
                     <OverlayTrigger
@@ -83,7 +83,7 @@ export default function Shipping() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={provinceTooltip}
                     >
-                        <input type="text" style={{ width: '100%' }}></input>
+                        <input type="text" style={{ width: '100%' }} value={props.province} onChange={(e) => {props.setProvince(e.target.value)}}></input>
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">
@@ -95,12 +95,7 @@ export default function Shipping() {
                         delay={{ show: 250, hide: 400 }}
                         overlay={countryTooltip}
                     >
-                        <select style={{width: '100%'}}>
-                        <option selected disabled>Select one</option>
-                            <option>Canada</option>
-                            <option>United States</option>
-                            <option>Mexico</option>
-                        </select>
+                        <input type="text" style={{ width: '100%' }} value={props.country} onChange={(e) => {props.setCountry(e.target.value)}}></input>
                     </OverlayTrigger>
                 </div>
             </div>

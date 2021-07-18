@@ -6,7 +6,7 @@ import { faStar as unfilled } from '@fortawesome/free-regular-svg-icons';
 export default function Sidebar(props) {
     return (
         <div className="col-2 sticky-top text-white" style={{ height: '100vh', backgroundColor: '#212529', paddingTop: '5rem' }}>
-            <div className="pt-5 px-4 mb-5">
+            <div className="pt-4 px-4 mb-5">
                 <h2 class="fs-3"><FontAwesomeIcon icon={hamburger} /> Categories</h2>
                 <div className="py-2">
                     <div className="d-grid gap-2">
@@ -114,6 +114,9 @@ export default function Sidebar(props) {
                             />
                         </div>
                     </Form>
+                    <div className="mb-3 text-end">
+                        <Button className="p-1" variant="secondary" onClick={()=>{window.location.reload()}}>Reset Fields</Button>
+                    </div>
                 </div>
             </div>
         </div>

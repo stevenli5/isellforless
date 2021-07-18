@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faIdCard as card } from '@fortawesome/free-solid-svg-icons';
+import { faQuestionCircle as question, faIdCard as card } from '@fortawesome/free-solid-svg-icons';
 import $ from 'jquery';
 
 export default function Information(props) {
@@ -55,7 +55,7 @@ export default function Information(props) {
 
     return (
         <>
-            <h1 className="text-center mb-4"><FontAwesomeIcon icon={card} /> Your Information</h1>
+            <h1 className="text-center mb-4"><FontAwesomeIcon icon={card} /> Your Information <FontAwesomeIcon className="align-middle fs-4 text-primary" title="Your contact information is needed in case we need to contact you about your order." icon={question} /></h1>
             <div className="row my-1">
                 <div className="col-2">
                     <label className="fw-bold">First&nbsp;Name</label>
@@ -84,7 +84,7 @@ export default function Information(props) {
             </div>
             <div className="row my-1">
                 <div className="col-2">
-                    <label className="fw-bold">Email</label>
+                    <label className="fw-bold">Email&nbsp;Address</label>
                 </div>
                 <div className="col-4">
                     <OverlayTrigger

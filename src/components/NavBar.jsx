@@ -2,15 +2,15 @@ import { Container, Navbar, Form, FormControl, Button, Modal } from "react-boots
 import logo from '../assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingBasket as cart, faSearch as search } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Information from './Information';
 import Payment from './Payment';
 import Shipping from './Shipping';
 import Cart from './Cart';
-//import Final from './Final';
+import Final from './Final';
 
 function CartAndCheckout(props) {
-  const [stage, setStage] = useState(0); //stage represents the current "stage" in the checkout process
+  const [stage, setStage] = useState(0); // stage represents the current "stage" in the checkout process
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNum, setPhoneNum] = useState("");
@@ -19,15 +19,24 @@ function CartAndCheckout(props) {
   const [cardNum, setCardNum] = useState("");
   const [cardDate, setCardDate] = useState("");
   const [cardCVV, setCardCVV] = useState("");
-  /*const [, set] = useState("");
-  const [, set] = useState("");
-  const [, set] = useState("");
-  const [, set] = useState("");
-  const [, set] = useState("");*/
+  const [address, setAddress] = useState("");
+  const [zip, setZip] = useState("");
+  const [city, setCity] = useState("");
+  const [province, setProvince] = useState("");
+  const [country, setCountry] = useState("");
+  const [total, setTotal] = useState(0);
 
   let infoObj = {firstName, setFirstName, lastName, setLastName, phoneNum, setPhoneNum, email, setEmail};
   let payObj = {cardName, setCardName, cardNum, setCardNum, cardDate, setCardDate, cardCVV, setCardCVV};
-  //let shipObj = {};
+  let shipObj = {address, setAddress, zip, setZip, city, setCity, province, setProvince, country, setCountry};
+
+  useEffect(() => {
+    let curTotal = 0;
+    props.cart.forEach(item => {
+        curTotal += Number(item.price);
+    });
+    setTotal(curTotal);
+  });
 
   return (
     <>
@@ -38,13 +47,14 @@ function CartAndCheckout(props) {
         centered
       >
         <Modal.Header style={{backgroundColor: '#E5E5E5'}} closeButton>
+        <Modal.Title>Checkout</Modal.Title>
         </Modal.Header>
         <Modal.Body style={{backgroundColor: '#CCCCCC'}}>
-          {stage === 0 ? <Cart cart={props.cart} handleRemove={props.handleRemove} handleClear={props.handleClear} /> : stage === 1 ? <Information {...infoObj}/> : stage === 2 ? <Payment {...payObj}/> : stage === 3 ? <Shipping /> : <></>/*<Final />*/}
+          {stage === 0 ? <Cart cart={props.cart} total={total} handleRemove={props.handleRemove} handleClear={props.handleClear} /> : stage === 1 ? <Information {...infoObj}/> : stage === 2 ? <Payment {...payObj} /> : stage === 3 ? <Shipping {...shipObj}/> : <Final {...infoObj} {...payObj} {...shipObj} total={total}/>}
 
           <hr />
           {stage !== 0 ? <Button variant="dark" className="float-start" onClick={() => setStage(stage - 1)}>Back</Button> : <></>}
-          {stage !== 4 ? <Button variant="dark" className="float-end" onClick={() => setStage(stage + 1)}>Next</Button> : <></>}
+          {stage !== 4 ? <Button variant="dark" className="float-end" onClick={() => setStage(stage + 1)}>Next</Button> : <Button variant="dark" className="float-end" onClick={()=>{window.location.reload()}}>Confirm Order</Button>}
         </Modal.Body>
       </Modal>
     </>

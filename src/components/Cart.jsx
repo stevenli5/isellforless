@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingBasket as basket, faTimesCircle as remove } from '@fortawesome/free-solid-svg-icons';
+import { faQuestionCircle as question, faShoppingBasket as basket, faTimesCircle as remove } from '@fortawesome/free-solid-svg-icons';
 
 export default function Cart(props) {
-    const [total, setTotal] = useState(0);
     const [, updateState] = React.useState();
     const forceUpdate = React.useCallback(() => updateState({}), []);
-
-    useEffect(() => {
-        let curTotal = 0;
-        props.cart.forEach(item => {
-            curTotal += Number(item.price);
-        });
-        setTotal(curTotal);
-    });
 
     function handleRemove(item) {
         props.handleRemove(item.id);
@@ -37,21 +28,24 @@ export default function Cart(props) {
             </div>
             <div className="fs-5 text-end">
                 <div className="row">
-                <div className="col-8 text-start"><Button variant="danger" className="ms-2 p-2 text-middle" onClick={() => { props.handleClear([]) }}>Clear Cart</Button></div>
+                    <div className="col-8"></div>
                     <div className="col-4 text-end">
-                        <b>Subtotal:</b> ${total.toFixed(2)}
+                        <b>Subtotal:</b> ${props.total.toFixed(2)}
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-8"></div>
                     <div className="col-4 text-end">
-                        <b>Tax:</b> ${(total * 0.13).toFixed(2)}
+                        <b>Tax:</b> ${(props.total * 0.13).toFixed(2)}
                         <hr />
                     </div>
                 </div>
                 <div className="fs-4 row">
-                    <div className="col-12">
-                        <b>Total:</b> ${(total * 1.13).toFixed(2)}
+                    <div className="col-7 text-start">
+                        <Button variant="danger" className="ms-2 p-2 text-middle" onClick={() => { props.handleClear([]) }}>Clear Cart</Button>
+                    </div>
+                    <div className="col-5 text-end">
+                        <b>Total:</b> ${(props.total * 1.13).toFixed(2)}
                     </div>
                 </div>
             </div>

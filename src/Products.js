@@ -19,6 +19,7 @@ import ipadpro129GreyNew from './assets/products/ipads/ipadpro129-grey-new.png';
 
 // MacBooks
 import macbookairGreyNew from './assets/products/macbooks/macbookair-grey-new.png';
+import macbookairSilverAcceptable from './assets/products/macbooks/macbookair-silver-acceptable.png';
 import macbookairGoldGood from './assets/products/macbooks/macbookair-gold-good.png';
 import macbookproGreyAcceptable from './assets/products/macbooks/macbookpro-grey-acceptable.png';
 import macbookproSilverNew from './assets/products/macbooks/macbookpro-silver-new.png';
@@ -157,7 +158,7 @@ const allProducts = [
     name: "iPhone 11 Pro Max 64GB",
     image: iphone11promaxGreenAcceptable,
     price: "735.99",
-    rating: 3.6,
+    rating: 4.1,
     quality: "Used - Acceptable",
     colour: "Midnight Green",
     description: "This iPhone 11 Pro Max, ",
@@ -251,10 +252,23 @@ const allProducts = [
   {
     id: "16",
     category: "MacBook",
+    name: "MacBook Air M1 2020 256GB",
+    image: macbookairSilverAcceptable,
+    price: "999.99",
+    rating: 1.2,
+    quality: "Used - Acceptable",
+    colour: "Silver",
+    description: "This iPhone 11 Pro Max, ",
+    reviews: ['"really good"'],
+    reviewName: ["", ""]
+  },
+  {
+    id: "17",
+    category: "MacBook",
     name: "MacBook Air M1 2020 512GB",
     image: macbookairGoldGood,
     price: "1399.99",
-    rating: 3.4,
+    rating: 4.2,
     quality: "Used - Good",
     colour: "Gold",
     description: "This iPhone 11 Pro Max, ",
@@ -262,7 +276,7 @@ const allProducts = [
     reviewName: ["", ""]
   },
   {
-    id: "17",
+    id: "18",
     category: "MacBook",
     name: "MacBook Pro M1 13\" 2020 256GB",
     image: macbookproGreyAcceptable,
@@ -275,7 +289,7 @@ const allProducts = [
     reviewName: ["", ""]
   },
   {
-    id: "18",
+    id: "19",
     category: "MacBook",
     name: "MacBook Pro i5 16\" 2020 1TB",
     image: macbookproSilverNew,
@@ -291,7 +305,7 @@ const allProducts = [
   // Apple Watches
 
   {
-    id: "19",
+    id: "20",
     category: "Apple Watch",
     name: "Apple Watch Series 3 GPS, 38mm",
     image: watch3gps38GreyGood,
@@ -304,7 +318,7 @@ const allProducts = [
     reviewName: ["", ""]
   },
   {
-    id: "20",
+    id: "21",
     category: "Apple Watch",
     name: "Apple Watch Series 6 GPS, 40mm",
     image: watch6gps40GoldNew,
@@ -317,11 +331,11 @@ const allProducts = [
     reviewName: ["", ""]
   },
   {
-    id: "21",
+    id: "22",
     category: "Apple Watch",
     name: "Apple Watch SE Cellular, 40mm",
     image: watchsecellular40PistachioAcceptable,
-    price: "349.98",
+    price: "239.98",
     rating: 2.3,
     quality: "Used - Acceptable",
     colour: "Pistachio",
@@ -330,7 +344,7 @@ const allProducts = [
     reviewName: ["", ""]
   },
   {
-    id: "22",
+    id: "23",
     category: "Apple Watch",
     name: "Apple Watch Series 6 Cellular, 44mm",
     image: watch6cellular44GreyNew,

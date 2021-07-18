@@ -6,7 +6,7 @@ import Help from './components/Help';
 import React, { useState, useEffect } from 'react';
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faQuestionCircle as question } from '@fortawesome/free-solid-svg-icons';
+import { faInfoCircle as info } from '@fortawesome/free-solid-svg-icons';
 import allProducts from './Products';
 
 function App() {
@@ -68,7 +68,7 @@ function App() {
       sortedProducts = sortedProducts.filter((prod) => prod.category === "iPad");
     } else if (categoryType === "MacBook") {
       sortedProducts = sortedProducts.filter((prod) => prod.category === "MacBook");
-    } else if (categoryType === "Apple Watches") {
+    } else if (categoryType === "Apple Watch") {
       sortedProducts = sortedProducts.filter((prod) => prod.category === "Apple Watch");
     }
 
@@ -92,7 +92,7 @@ function App() {
         <Sidebar sortByPrice={setPriceSortType} sortByRating={setRatingSortType} setCategory={setCategoryType} sortByQuality={setQualitySortType} />
         <div className="col-10 px-4 mt-5 bg-light d-flex flex-wrap" style={{ paddingTop: '4rem' }}>
           {products.map((item) => (<ProductCard {...item} handleAdd={handleAdd}/>))}
-          <Button variant="secondary" className="shadow rounded-circle me-3 mb-3 p-2" style={{ position: 'fixed', right: '0', bottom: '0' }} onClick={() => setModalShow(true)}><FontAwesomeIcon className="fs-1" icon={question} /></Button>
+          <Button variant="secondary" className="shadow rounded-circle me-3 mb-3 p-2" style={{ position: 'fixed', right: '0', bottom: '0' }} onClick={() => setModalShow(true)}><FontAwesomeIcon className="fs-1" icon={info} /></Button>
           <Help
             show={modalShow}
             onHide={() => setModalShow(false)}
