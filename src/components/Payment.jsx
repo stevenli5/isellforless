@@ -27,7 +27,7 @@ export default function Payment(props) {
         </Tooltip>
     );
 
-    useEffect(()=>{
+    useEffect(() => {
         //CC Number input formatting
         $("input[id='ccNumber']").each(function () {
             $(this).on("change keyup paste", function (e) {

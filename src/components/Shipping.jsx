@@ -57,7 +57,7 @@ export default function Shipping(props) {
                         delay={{ show: 250, hide: 400 }}
                         overlay={postalTooltip}
                     >
-                        <input type="text" style={{ width: '100%' }} value={props.zip} onChange={(e) => {props.setZip(e.target.value)}}></input>
+                        <input type="text" style={{ width: '100%' }} value={props.postal} onChange={(e) => {props.setPostal(e.target.value)}}></input>
                     </OverlayTrigger>
                 </div>
                 <div className="col-2">

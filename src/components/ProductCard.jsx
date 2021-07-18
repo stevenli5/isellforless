@@ -35,7 +35,8 @@ function ProductInfo(props) {
             {props.description}
           </div>
           <div className="row mt-4">
-            {props.reviews.map((review) => (<div className="mb-2">{review}</div>))}
+            {props.reviews.map((review) => (<div className="mb-2">"{review}"</div>))}
+            {props.reviewers.map((reviewers) => (<div className="mb-2">{reviewers}</div>))}
           </div>
         </div>
       </Modal.Body>
