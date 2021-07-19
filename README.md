@@ -34,6 +34,7 @@
 - States https://reactjs.org/docs/state-and-lifecycle.html
 - componentDidMount in functional components with hooks https://medium.com/@timtan93/states-and-componentdidmount-in-functional-components-with-hooks-cac5484d22ad
 - Use jQuery with React https://stackoverflow.com/questions/38518278/how-to-use-jquery-with-reactjs
+- Displaying div for a limited time: https://stackoverflow.com/questions/64430233/react-js-timeout-how-to-hide-a-div-after-a-few-seconds
 
 ### Images
 - Apple logo https://commons.wikimedia.org/wiki/File:Apple_logo_grey.svg
