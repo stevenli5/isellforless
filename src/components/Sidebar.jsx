@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Button, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as filled, faBars as hamburger, faArrowsAltV as arrows, faTags as price, faStarHalfAlt as rating, faAward as quality, faMobileAlt as phone, faTabletAlt as tablet, faLaptop as laptop } from '@fortawesome/free-solid-svg-icons';
@@ -5,9 +6,27 @@ import { faStar as unfilled, faClock as watch } from '@fortawesome/free-regular-
 import { faApple as apple } from '@fortawesome/free-brands-svg-icons';
 
 export default function Sidebar(props) {
+    const [priceRadio, setPriceRadio] = useState(null);
+    const [ratingRadio, setRatingRadio] = useState(null);
+    const [qualityRadio, setQualityRadio] = useState(null);
 
     function handleReset(){
-        
+        props.setCategory("");
+        props.sortByPrice("");
+        props.sortByRating("");
+        props.sortByQuality("");
+        if (priceRadio != null){
+            priceRadio.checked = false;
+            setPriceRadio(null);
+        } 
+        if (ratingRadio != null){
+            ratingRadio.checked = false;
+            setRatingRadio(null);
+        } 
+        if (qualityRadio != null){
+            qualityRadio.checked = false;
+            setQualityRadio(null);
+        } 
     }
 
     return (
@@ -46,14 +65,14 @@ export default function Sidebar(props) {
                                     id="lowestToHighest"
                                     label="Lowest to Highest"
                                     name="priceSort"
-                                    onClick={() => { props.sortByPrice("L2H") }}
+                                    onClick={(e) => { props.sortByPrice("L2H"); setPriceRadio(e.target); }}
                                 />
                                 <Form.Check
                                     type="radio"
                                     id="highestToLowest"
                                     label="Highest to Lowest"
                                     name="priceSort"
-                                    onClick={() => { props.sortByPrice("H2L") }}
+                                    onClick={(e) => { props.sortByPrice("H2L"); setPriceRadio(e.target); }}
                                 />
                             </div>
                         </div>
@@ -64,28 +83,28 @@ export default function Sidebar(props) {
                                 id="4stars"
                                 label={<><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={unfilled} /><span> &amp; Up</span></>}
                                 name="reviewSort"
-                                onClick={() => { props.sortByRating("4") }}
+                                onClick={(e) => { props.sortByRating("4"); setRatingRadio(e.target); }}
                             />
                             <Form.Check
                                 type="radio"
                                 id="3stars"
                                 label={<><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><span> &amp; Up</span></>}
                                 name="reviewSort"
-                                onClick={() => { props.sortByRating("3") }}
+                                onClick={(e) => { props.sortByRating("3"); setRatingRadio(e.target); }}
                             />
                             <Form.Check
                                 type="radio"
                                 id="2stars"
                                 label={<><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><span> &amp; Up</span></>}
                                 name="reviewSort"
-                                onClick={() => { props.sortByRating("2") }}
+                                onClick={(e) => { props.sortByRating("2"); setRatingRadio(e.target); }}
                             />
                             <Form.Check
                                 type="radio"
                                 id="1star"
                                 label={<><FontAwesomeIcon icon={filled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><FontAwesomeIcon icon={unfilled} /><span> &amp; Up</span></>}
                                 name="reviewSort"
-                                onClick={() => { props.sortByRating("1") }}
+                                onClick={(e) => { props.sortByRating("1"); setRatingRadio(e.target); }}
                             />
                         </div>
                         <div className="mb-3">
@@ -95,28 +114,28 @@ export default function Sidebar(props) {
                                 id="any"
                                 label="Any"
                                 name="qualitySort"
-                                onClick={() => { props.sortByQuality("Any") }}
+                                onClick={(e) => { props.sortByQuality("Any"); setQualityRadio(e.target); }}
                             />
                             <Form.Check
                                 type="radio"
                                 id="likeNew"
                                 label="Used - Like New"
                                 name="qualitySort"
-                                onClick={() => { props.sortByQuality("Like New") }}
+                                onClick={(e) => { props.sortByQuality("Like New"); setQualityRadio(e.target); }}
                             />
                             <Form.Check
                                 type="radio"
                                 id="good"
                                 label="Used - Good"
                                 name="qualitySort"
-                                onClick={() => { props.sortByQuality("Good") }}
+                                onClick={(e) => { props.sortByQuality("Good"); setQualityRadio(e.target); }}
                             />
                             <Form.Check
                                 type="radio"
                                 id="acceptable"
                                 label="Used - Acceptable"
                                 name="qualitySort"
-                                onClick={() => { props.sortByQuality("Acceptable") }}
+                                onClick={(e) => { props.sortByQuality("Acceptable"); setQualityRadio(e.target); }}
                             />
                         </div>
                     </Form>

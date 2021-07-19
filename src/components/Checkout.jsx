@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight as arrow } from '@fortawesome/free-solid-svg-icons';
 
 export default function Checkout(props) {
-  const [stage, setStage] = useState(0); // stage represents the current "stage" in the checkout process
+  const [stage, setStage] = useState(0); 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNum, setPhoneNum] = useState("");

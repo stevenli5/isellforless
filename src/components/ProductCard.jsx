@@ -24,11 +24,11 @@ function ProductInfo(props) {
     if(addPopUp){
       setTimeout(()=>{
         setAddPopUp(false);
-      }, 2500);
+      }, 2000);
     } else if(removePopUp){
       setTimeout(()=>{
         setRemovePopUp(false);
-      }, 2500);
+      }, 2000);
     }
   }, [addPopUp, removePopUp]);
 
